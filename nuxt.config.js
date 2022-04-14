@@ -33,38 +33,37 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: ['@nuxt/postcss8', '@nuxtjs/style-resources', '@nuxtjs/dotenv'],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios', '@nuxtjs/i18n'],
+  modules: ['@nuxtjs/axios'],
   env: {
     baseUrl: process.env.BASE_API,
     siteUrl: process.env.SITE_URL,
   },
   axios: { baseURL: `${process.env.BASE_API}` },
-  i18n: {
-    baseUrl: `${process.env.SITE_URL}`,
-    locales: [
-      {
-        code: 'en',
-        lang: 'ENG',
-        name: 'ENG',
-        iso: 'en-EN',
-        file: 'en',
-        isCatchallLocale: true,
-      },
-      { code: 'ru', lang: 'RUS', name: 'RUS', iso: 'ru-RU', file: 'ru' },
-    ],
-    defaultLocale: 'en',
-    seo: true,
-    vueI18n: {
-      fallbackLocale: 'en',
-      messages: {
-        en,
-        ru,
-      },
-    },
-  },
+  // i18n: {
+  //   baseUrl: `${process.env.SITE_URL}`,
+  //   locales: [
+  //     {
+  //       code: 'en',
+  //       lang: 'ENG',
+  //       name: 'ENG',
+  //       iso: 'en-EN',
+  //       file: 'en',
+  //       isCatchallLocale: true,
+  //     },
+  //     { code: 'ru', lang: 'RUS', name: 'RUS', iso: 'ru-RU', file: 'ru' },
+  //   ],
+  //   defaultLocale: 'en',
+  //   seo: true,
+  //   vueI18n: {
+  //     fallbackLocale: 'en',
+  //     messages: {
+  //       en,
+  //       ru,
+  //     },
+  //   },
+  // },
   router: {
     linkExactActiveClass: '_active',
     linkActiveClass: '_active',
