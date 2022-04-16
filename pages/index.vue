@@ -108,44 +108,7 @@
                 alt=""
               />
             </div>
-            <div class="agency__statistic">
-              <div class="agency__item">
-                <div class="agency__item-img">
-                  <img
-                    src="@/assets/client/img/global_agencies/statistic-1.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="agency__number">
-                  <h5>+50.000</h5>
-                  <p>TONNAGE POTASSIUM</p>
-                </div>
-              </div>
-              <div class="agency__item">
-                <div class="agency__item-img">
-                  <img
-                    src="@/assets/client/img/global_agencies/statistic-2.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="agency__number">
-                  <h5>+50.000</h5>
-                  <p>TONNAGE POTASSIUM</p>
-                </div>
-              </div>
-              <div class="agency__item">
-                <div class="agency__item-img">
-                  <img
-                    src="@/assets/client/img/global_agencies/statistic-3.svg"
-                    alt=""
-                  />
-                </div>
-                <div class="agency__number">
-                  <h5>+50.000</h5>
-                  <p>TONNAGE POTASSIUM</p>
-                </div>
-              </div>
-            </div>
+            <agency-statistics></agency-statistics>
           </div>
         </div>
       </div>

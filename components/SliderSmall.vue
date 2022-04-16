@@ -1,8 +1,8 @@
 <template>
   <div class="facilities__animation swiper">
     <swiper
-      ref="mySwiper"
-      :options="swiperOptions"
+      ref="mySwiperSmall"
+      :options="swiperSmallOptions"
       class="facilities__animation-wrapper swiper-wrapper"
     >
       <swiper-slide class="facilities__animation-slide swiper-slide">
@@ -90,7 +90,7 @@ export default {
   },
   data() {
     return {
-      swiperOptions: {
+      swiperSmallOptions: {
         slidesPerView: 6,
         slidesPerGroup: 6,
         loop: true,
@@ -103,12 +103,12 @@ export default {
     }
   },
   computed: {
-    swiper() {
-      return this.$refs.mySwiper.$swiper
+    swiperSmall() {
+      return this.$refs.mySwiperSmall.$swiper
     },
   },
   async mounted() {
-    await this.swiper
+    await this.swiperSmall
   },
 }
 </script>
