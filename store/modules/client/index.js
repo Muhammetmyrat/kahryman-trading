@@ -9,13 +9,14 @@ const state = () => ({
     speed: 3000,
     parallax: true,
     autoplay: {
-      reverseDirection: true,
       delay: 3000,
       disableOnInteraction: false,
     },
+    paginationClickable: true,
     pagination: {
       el: '.swiper-mainpage__pagination',
       clickable: true,
+      type: 'bullets',
       renderBullet: function (index, className) {
         let number
         if (index <= 9) {

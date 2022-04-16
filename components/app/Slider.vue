@@ -1,8 +1,12 @@
 <template>
   <div class="mainpage">
     <div class="mainpage__swiper swiper-mainpage swiper">
-      <div class="swiper-mainpage__wrapper swiper-wrapper">
-        <div
+      <swiper
+        ref="mySwiper"
+        :options="swiperOptions"
+        class="swiper-mainpage__wrapper swiper-wrapper"
+      >
+        <swiper-slide
           class="swiper-mainpage__slide swiper-slide"
           style="background-image: url(/image/mainpage/01.png)"
         >
@@ -14,8 +18,8 @@
               <p class="body-mainpage__subtitle">potassium chloride</p>
             </div>
           </div>
-        </div>
-        <div
+        </swiper-slide>
+        <swiper-slide
           class="swiper-mainpage__slide swiper-slide"
           style="background-image: url(/image/mainpage/02.png)"
         >
@@ -28,8 +32,8 @@
               </h1>
             </div>
           </div>
-        </div>
-        <div
+        </swiper-slide>
+        <swiper-slide
           class="swiper-mainpage__slide swiper-slide"
           style="background-image: url(/image/mainpage/03.png)"
         >
@@ -42,8 +46,8 @@
               </h1>
             </div>
           </div>
-        </div>
-      </div>
+        </swiper-slide>
+      </swiper>
       <div class="mainpage__swiper_wrapper">
         <div class="mainpage__swiper_container __container">
           <div class="swiper-mainpage__pagination swiper-pagination"></div>
@@ -55,5 +59,73 @@
 </template>
 
 <script>
-export default {}
+import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  data() {
+    return {
+      swiperOptions: {
+        direction: 'vertical',
+        speed: 3000,
+        parallax: true,
+        autoplay: {
+          delay: 3000,
+          disableOnInteraction: false,
+        },
+        pagination: {
+          el: '.swiper-mainpage__pagination',
+          clickable: true,
+          renderBullet: function (index, className) {
+            let number
+            if (index <= 9) {
+              number =
+                '<span class="' +
+                className +
+                '">' +
+                '0' +
+                (index + 1) +
+                '</span>'
+            } else {
+              number =
+                '<span class="' + className + '">' + (index + 1) + '</span>'
+            }
+            return number
+          },
+        },
+        scrollbar: {
+          el: '.swiper-mainpage__scrollbar',
+          draggable: true,
+        },
+        keyboard: {
+          enabled: true,
+          onlyInViewport: true,
+          pageUpDown: true,
+        },
+      },
+    }
+  },
+  computed: {
+    swiper() {
+      return this.$refs.mySwiper.$swiper
+    },
+  },
+  async mounted() {
+    await this.swiper
+  },
+}
 </script>
+
+<style scoped>
+.mainpage >>> .swiper-mainpage__pagination .swiper-pagination-bullet {
+  background: transparent !important;
+  color: #ffffff !important;
+  margin-bottom: 20px !important;
+  margin-top: 20px !important;
+  opacity: 1 !important;
+  width: 30px !important;
+  height: 30px !important;
+}
+</style>
