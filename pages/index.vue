@@ -1,6 +1,16 @@
 <template>
   <span>
     <slider></slider>
+    <section class="topics">
+      <div class="topics__container __container">
+        <div class="topics__wrapper">
+          <h3 class="topics__title">Trading Topics</h3>
+          <div class="topics__cards">
+            <iframe src="" frameborder="0"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
     <div class="facilities">
       <div class="facilities__container __container">
         <div class="facilities__body">
@@ -133,159 +143,6 @@
         </div>
       </div>
     </div>
-    <section class="product">
-      <div class="product__container __container">
-        <div class="product__row">
-          <div class="product__column">
-            <div class="product__img">
-              <img src="@/assets/client/img/product/1.png" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">LUMP SULPHUR</div>
-              <div class="product__content-text">
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that....
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img src="@/assets/client/img/product/2.png" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">LUMP SULPHUR</div>
-              <div class="product__content-text">
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that....
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img src="@/assets/client/img/product/3.png" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">LUMP SULPHUR</div>
-              <div class="product__content-text">
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that....
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img src="@/assets/client/img/product/4.png" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">LUMP SULPHUR</div>
-              <div class="product__content-text">
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that....
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img src="@/assets/client/img/product/5.png" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">LUMP SULPHUR</div>
-              <div class="product__content-text">
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that....
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img src="@/assets/client/img/product/6.png" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">LUMP SULPHUR</div>
-              <div class="product__content-text">
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that.... It is a long
-                  established fact that a reader will be distracted by the
-                  readable content of a page when looking at its layout. The
-                  point of using Lorem Ipsum is that.... It is a long
-                  established fact that a reader will be distracted by the
-                  readable content of a page when looking at its layout. The
-                  point of using Lorem Ipsum is that.... It is a long
-                  established fact that a reader will be distracted by the
-                  readable content of a page when looking at its layout. The
-                  point of using Lorem Ipsum is that.... It is a long
-                  established fact that a reader will be distracted by the
-                  readable content of a page when looking at its layout. The
-                  point of using Lorem Ipsum is that....
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img src="@/assets/client/img/product/1.png" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">LUMP SULPHUR</div>
-              <div class="product__content-text">
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that....
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img src="@/assets/client/img/product/2.png" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">LUMP SULPHUR</div>
-              <div class="product__content-text">
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that....
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img src="@/assets/client/img/product/3.png" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">LUMP SULPHUR</div>
-              <div class="product__content-text">
-                <p>
-                  It is a long established fact that a reader will be distracted
-                  by the readable content of a page when looking at its layout.
-                  The point of using Lorem Ipsum is that....
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="agency">
       <div class="agency__container __container">
         <div class="agency__wrapper">
