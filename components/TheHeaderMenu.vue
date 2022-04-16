@@ -8,10 +8,12 @@
     <nav class="menu-header__nav">
       <ul class="menu-header__list">
         <li class="menu-header__item">
-          <a href="./index.html" class="menu-header__link active">Home</a>
+          <nuxt-link :to="'/'" class="menu-header__link active">Home</nuxt-link>
         </li>
         <li class="menu-header__item">
-          <a href="./about-us.html" class="menu-header__link">About us</a>
+          <nuxt-link :to="'/about-us'" class="menu-header__link"
+            >About us</nuxt-link
+          >
         </li>
         <li class="menu-header__item">
           <a href="./product.html" class="menu-header__link">Product</a>

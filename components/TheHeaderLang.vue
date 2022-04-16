@@ -1,6 +1,6 @@
 <template>
   <div class="header__lang lang">
-    <a href="#" class="lang__button icon-arrow-down">TM</a>
+    <a href="#" class="lang__button icon-arrow-down">EN</a>
     <div class="lang__menu">
       <a href="#" class="lang__item">RU</a>
     </div>
