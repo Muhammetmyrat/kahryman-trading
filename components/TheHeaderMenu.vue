@@ -26,7 +26,7 @@
           >
         </li>
         <li class="menu-header__item">
-          <nuxt-link :to="'/contacts'" class="menu-header__link"
+          <nuxt-link :to="'/contact-us'" class="menu-header__link"
             >Contacts</nuxt-link
           >
         </li>

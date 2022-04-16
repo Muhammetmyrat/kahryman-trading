@@ -4,7 +4,7 @@
     <section class="gallery">
       <div class="gallery__container __container">
         <div class="gallery__row">
-          <div class="gallery__column" @click="show = true">
+          <div class="gallery__column" @click="isShow = true">
             <div class="gallery__video">
               <div class="gallery__play-icon">
                 <img src="@/assets/client/img/gallery/play-icon.svg" alt="" />
@@ -17,8 +17,8 @@
         </div>
       </div>
       <video-player
-        :show="show"
-        @closeModal="show = false"
+        :isShow="isShow"
+        @closeModal="isShow = false"
       ></video-player></section
   ></span>
 </template>
@@ -32,7 +32,7 @@ export default {
   },
   data() {
     return {
-      show: false,
+      isShow: false,
     }
   },
 }

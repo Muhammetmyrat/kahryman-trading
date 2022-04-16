@@ -1,5 +1,5 @@
 <template>
-  <div class="video" :class="{ show: show }">
+  <div class="video" :class="{ show: isShow }">
     <div class="video__container">
       <span class="video__close" @click="close"></span>
       <div id="player"></div>
@@ -10,7 +10,7 @@
 <script>
 export default {
   props: {
-    show: {
+    isShow: {
       type: Boolean,
       default: false,
     },
