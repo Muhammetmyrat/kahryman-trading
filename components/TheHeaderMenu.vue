@@ -16,13 +16,19 @@
           >
         </li>
         <li class="menu-header__item">
-          <a href="./product.html" class="menu-header__link">Product</a>
+          <nuxt-link :to="'/product'" class="menu-header__link"
+            >Product</nuxt-link
+          >
         </li>
         <li class="menu-header__item">
-          <a href="./gallery.html" class="menu-header__link">Gallery</a>
+          <nuxt-link :to="'/gallery'" class="menu-header__link"
+            >Gallery</nuxt-link
+          >
         </li>
         <li class="menu-header__item">
-          <a href="./contact-us.html" class="menu-header__link">Contacts</a>
+          <nuxt-link :to="'/contacts'" class="menu-header__link"
+            >Contacts</nuxt-link
+          >
         </li>
       </ul>
     </nav>
