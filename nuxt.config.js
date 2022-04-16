@@ -41,29 +41,29 @@ export default {
     siteUrl: process.env.SITE_URL,
   },
   axios: { baseURL: `${process.env.BASE_API}` },
-  // i18n: {
-  //   baseUrl: `${process.env.SITE_URL}`,
-  //   locales: [
-  //     {
-  //       code: 'en',
-  //       lang: 'ENG',
-  //       name: 'ENG',
-  //       iso: 'en-EN',
-  //       file: 'en',
-  //       isCatchallLocale: true,
-  //     },
-  //     { code: 'ru', lang: 'RUS', name: 'RUS', iso: 'ru-RU', file: 'ru' },
-  //   ],
-  //   defaultLocale: 'en',
-  //   seo: true,
-  //   vueI18n: {
-  //     fallbackLocale: 'en',
-  //     messages: {
-  //       en,
-  //       ru,
-  //     },
-  //   },
-  // },
+  i18n: {
+    baseUrl: `${process.env.SITE_URL}`,
+    locales: [
+      {
+        code: 'en',
+        lang: 'EN',
+        name: 'EN',
+        iso: 'en-US',
+        file: 'en',
+        isCatchallLocale: true,
+      },
+      { code: 'ru', lang: 'RU', name: 'RU', iso: 'ru-RU', file: 'ru' },
+    ],
+    defaultLocale: 'en',
+    seo: true,
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en,
+        ru,
+      },
+    },
+  },
   router: {
     linkExactActiveClass: '_active',
     linkActiveClass: '_active',
