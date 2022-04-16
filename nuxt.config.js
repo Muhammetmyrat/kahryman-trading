@@ -1,6 +1,5 @@
 import en from './locales/en'
 import ru from './locales/ru'
-require('dotenv').config()
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -24,10 +23,11 @@ export default {
     host: '0.0.0.0',
   },
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['@/assets/client/css/style.css'],
-
-  // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  css: ['@/assets/client/css/style.css', 'swiper/css/swiper.css'],
+  /*
+   ** Plugins to load before mounting the App
+   */
+  plugins: [{ src: '@/plugins/vue-awesome-swiper', mode: 'client' }],
 
   // Auto import components: https://go.nuxtjs.dev/config-component
   components: true,

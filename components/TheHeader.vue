@@ -1,7 +1,8 @@
 <template>
   <header class="header">
     <div class="header__container __container">
-      <the-header-logo></the-header-logo>
+      <logo-white></logo-white>
+      <logo-blue></logo-blue>
       <the-header-menu></the-header-menu>
       <the-header-lang></the-header-lang>
     </div>
@@ -9,7 +10,10 @@
 </template>
 
 <script>
+import LogoBlue from './app/logo/LogoBlue.vue'
+import LogoWhite from './app/logo/LogoWhite.vue'
 export default {
+  components: { LogoWhite, LogoBlue },
   data() {
     return {
       className: 'active',

@@ -52,3 +52,6 @@ window.onscroll = function () {
     document.querySelector('.header').classList.remove(className)
   }
 }
+
+//
+var player = new Playerjs({ id: 'player', file: './video/Glass Animals - Heat Waves (Official Video).mp4' })
