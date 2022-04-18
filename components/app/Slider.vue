@@ -75,6 +75,10 @@ export default {
           delay: 3000,
           disableOnInteraction: false,
         },
+        scrollbar: {
+          el: '.swiper-mainpage__scrollbar',
+          draggable: true,
+        },
         pagination: {
           el: '.swiper-mainpage__pagination',
           clickable: true,
@@ -94,10 +98,6 @@ export default {
             }
             return number
           },
-        },
-        scrollbar: {
-          el: '.swiper-mainpage__scrollbar',
-          draggable: true,
         },
         keyboard: {
           enabled: true,

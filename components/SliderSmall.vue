@@ -93,7 +93,6 @@ export default {
       swiperSmallOptions: {
         slidesPerView: 6,
         slidesPerGroup: 6,
-        loop: true,
         keyboard: {
           enabled: true,
           onlyInViewport: true,
