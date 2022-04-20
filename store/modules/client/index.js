@@ -3,7 +3,14 @@ import mutations from './mutations'
 import getters from './getters'
 
 const state = () => ({
-  imgURL: 'http://10.192.1.52:3000/api',
+  imgURL: `${process.env.IMAGE_URL}`,
+  headers: null,
+  topics: null,
+  facilities: null,
+  sliders: null,
+  agens: null,
+  statistics: null,
+  footer: null,
 })
 
 export default {

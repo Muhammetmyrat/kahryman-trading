@@ -36,11 +36,14 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: ['@nuxtjs/axios'],
+
   env: {
     baseUrl: process.env.BASE_API,
     siteUrl: process.env.SITE_URL,
   },
+
   axios: { baseURL: `${process.env.BASE_API}` },
+
   i18n: {
     baseUrl: `${process.env.SITE_URL}`,
     locales: [

@@ -5,77 +5,12 @@
       :options="swiperSmallOptions"
       class="facilities__animation-wrapper swiper-wrapper"
     >
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/01.png"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/02.png"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/03.png"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/04.png"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/05.png"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/06.png"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/01.png"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/02.png"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/03.png"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/04.png"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/05.png"
-          alt=""
-        />
-      </swiper-slide>
-      <swiper-slide class="facilities__animation-slide swiper-slide">
-        <img
-          src="@/assets/client/img/facilities/animation-gallery/06.png"
-          alt=""
-        />
+      <swiper-slide
+        class="facilities__animation-slide swiper-slide"
+        v-for="slider in sliders"
+        :key="slider.id"
+      >
+        <img :src="`${imgURL}/${slider.image_path}`" alt="" />
       </swiper-slide>
     </swiper>
   </div>
@@ -84,6 +19,16 @@
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 export default {
+  props: {
+    imgURL: {
+      type: String,
+      default: '',
+    },
+    sliders: {
+      type: Array,
+      default: () => [],
+    },
+  },
   components: {
     Swiper,
     SwiperSlide,
