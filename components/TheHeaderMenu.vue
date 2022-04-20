@@ -36,5 +36,23 @@
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    type: {
+      menus: Array,
+      default: () => [],
+    },
+  },
+  data() {
+    return {
+      paths: [
+        { id: 0, path: '/' },
+        { id: 1, path: '/about-us' },
+        { id: 2, path: '/product' },
+        { id: 3, path: '/gallery' },
+        { id: 4, path: '/contact-us' },
+      ],
+    }
+  },
+}
 </script>

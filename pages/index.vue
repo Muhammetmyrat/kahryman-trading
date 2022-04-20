@@ -114,8 +114,5 @@ export default {
   methods: {
     ...mapActions('client', ['fetchHome']),
   },
-  mounted() {
-    console.log(this.itemsLastImages)
-  },
 }
 </script>

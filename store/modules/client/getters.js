@@ -5,7 +5,7 @@ const images = (state) => {
   return state.headers?.iamges
 }
 const menus = (state) => {
-  return state.headers?.menus
+  return state.headers?.menu
 }
 const topicTitle = (state) => {
   return state.facilities?.topic_title

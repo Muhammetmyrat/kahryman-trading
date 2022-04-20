@@ -67,6 +67,32 @@ export default {
       },
     },
   },
+
+  auth: {
+    redirect: {
+      login: '/admin/login',
+      logout: '/admin/login',
+      callback: '/admin/login',
+      home: '/admin',
+    },
+    strategies: {
+      local: {
+        token: {
+          property: 'token',
+          type: false,
+        },
+        user: {
+          property: 'user',
+        },
+        endpoints: {
+          login: { url: '/login/admin', method: 'post' },
+          logout: false,
+          user: { url: '/admin/get-user-data', method: 'get' },
+        },
+      },
+    },
+  },
+
   router: {
     linkExactActiveClass: '_active',
     linkActiveClass: '_active',

@@ -36,8 +36,22 @@ export default {
   data() {
     return {
       swiperSmallOptions: {
-        slidesPerView: 6,
-        slidesPerGroup: 6,
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        breakpoints: {
+          600: {
+            slidesPerView: 4,
+            slidesPerGroup: 4,
+          },
+          900: {
+            slidesPerView: 5,
+            slidesPerGroup: 5,
+          },
+          1200: {
+            slidesPerView: 6,
+            slidesPerGroup: 6,
+          },
+        },
         keyboard: {
           enabled: true,
           onlyInViewport: true,

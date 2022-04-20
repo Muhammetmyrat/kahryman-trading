@@ -43,7 +43,6 @@ export default {
     }, options)
 
     this.observer.observe(this.$refs.observe)
-    //
   },
   destroyed() {
     this.observer.disconnect()
@@ -59,7 +58,7 @@ export default {
           let inc = target / speed
           if (count < target) {
             counter.innerText = '+' + Math.ceil(count + inc)
-            setTimeout(update, 1)
+            setTimeout(update, 5)
           } else {
             counter.innerText = '+' + target
           }
