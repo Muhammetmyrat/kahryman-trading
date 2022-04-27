@@ -1,6 +1,6 @@
 <template>
   <a href="#" @click.prevent class="header__logo">
-    <img src="@/assets/client/img/header/logo/logo.png" />
+    <img src="/img/header/logo/logo.png" />
   </a>
 </template>
 

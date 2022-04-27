@@ -1,16 +1,30 @@
 <template>
   <div class="agency__statistic" ref="observe">
-    <div
-      class="agency__item"
-      v-for="statistic in statistics"
-      :key="statistic.id"
-    >
+    <div class="agency__item">
       <div class="agency__item-img">
-        <img src="@/assets/client/img/global_agencies/statistic-1.svg" alt="" />
+        <img src="/img/global_agencies/statistic-1.svg" alt="" />
       </div>
       <div class="agency__number">
-        <h5 class="counter" :data-target="statistic.number">+0</h5>
-        <p>{{ statistic.text }}</p>
+        <h5 class="counter" :data-target="statistics[0].number">+0</h5>
+        <p>{{ statistics[0].title }}</p>
+      </div>
+    </div>
+    <div class="agency__item">
+      <div class="agency__item-img">
+        <img src="/img/global_agencies/statistic-2.svg" alt="" />
+      </div>
+      <div class="agency__number">
+        <h5 class="counter" :data-target="statistics[1].number">+0</h5>
+        <p>{{ statistics[1].title }}</p>
+      </div>
+    </div>
+    <div class="agency__item">
+      <div class="agency__item-img">
+        <img src="/img/global_agencies/statistic-3.svg" alt="" />
+      </div>
+      <div class="agency__number">
+        <h5 class="counter" :data-target="0">+0</h5>
+        <p>TONNAGE POTASSIUM</p>
       </div>
     </div>
   </div>

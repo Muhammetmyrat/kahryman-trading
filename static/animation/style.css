@@ -1,0 +1,30 @@
+social-channel-logo{
+	display: none !important;
+}
+navigation-bar{
+	display: none !important;
+}
+profile-info{
+	width: 100px !important;
+	background: url(./img/logo.svg) no-repeat !important;
+}
+profile-name{
+	position: relative !important;
+	top: -50px !important;
+	left: -30px !important;
+	color:#fff !important;
+	font-weight: 700 !important;
+	font-size:24px !important ;
+	user-select: none;
+	pointer-events: none !important;
+}
+profile-info{
+	pointer-events: none !important;
+}
+background-system {
+	background:transparent !important;
+}
+background-system img{
+	display: none !important; 
+}
+

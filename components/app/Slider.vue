@@ -6,10 +6,10 @@
         :options="swiperOptions"
         class="swiper-mainpage__wrapper swiper-wrapper"
       >
-        <swiper-slide
-          class="swiper-mainpage__slide swiper-slide"
-          style="background-image: url(/image/mainpage/01.png)"
-        >
+        <swiper-slide class="swiper-mainpage__slide swiper-slide">
+          <div class="swiper-mainpage__img">
+            <img src="/img/mainpage/01.png" />
+          </div>
           <div class="swiper-mainpage__body __container body-mainpage">
             <div class="body-mainpage__text-box" data-swiper-parallax="-300%">
               <h1 class="body-mainpage__title">
@@ -19,10 +19,10 @@
             </div>
           </div>
         </swiper-slide>
-        <swiper-slide
-          class="swiper-mainpage__slide swiper-slide"
-          style="background-image: url(/image/mainpage/02.png)"
-        >
+        <swiper-slide class="swiper-mainpage__slide swiper-slide">
+          <div class="swiper-mainpage__img">
+            <img src="/img/mainpage/02.png" />
+          </div>
           <div class="swiper-mainpage__body __container body-mainpage">
             <div class="body-mainpage__text-box" data-swiper-parallax="-300%">
               <p class="body-mainpage__subtitle">potassium chloride</p>
@@ -33,10 +33,38 @@
             </div>
           </div>
         </swiper-slide>
-        <swiper-slide
-          class="swiper-mainpage__slide swiper-slide"
-          style="background-image: url(/image/mainpage/03.png)"
-        >
+        <swiper-slide class="swiper-mainpage__slide swiper-slide">
+          <div class="swiper-mainpage__img">
+            <img src="/img/mainpage/03.png" />
+          </div>
+          <div class="swiper-mainpage__body __container body-mainpage">
+            <div class="body-mainpage__text-box" data-swiper-parallax="-300%">
+              <p class="body-mainpage__subtitle">potassium chloride</p>
+              <h1 class="body-mainpage__title">
+                Our services and our service is a solution before the customer's
+                problems arise
+              </h1>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="swiper-mainpage__slide swiper-slide">
+          <div class="swiper-mainpage__img">
+            <img src="/img/mainpage/04.png" />
+          </div>
+          <div class="swiper-mainpage__body __container body-mainpage">
+            <div class="body-mainpage__text-box" data-swiper-parallax="-300%">
+              <p class="body-mainpage__subtitle">potassium chloride</p>
+              <h1 class="body-mainpage__title">
+                Our services and our service is a solution before the customer's
+                problems arise
+              </h1>
+            </div>
+          </div>
+        </swiper-slide>
+        <swiper-slide class="swiper-mainpage__slide swiper-slide">
+          <div class="swiper-mainpage__img">
+            <img src="/img/mainpage/05.png" />
+          </div>
           <div class="swiper-mainpage__body __container body-mainpage">
             <div class="body-mainpage__text-box" data-swiper-parallax="-300%">
               <p class="body-mainpage__subtitle">potassium chloride</p>
@@ -48,8 +76,8 @@
           </div>
         </swiper-slide>
       </swiper>
-      <div class="mainpage__swiper_wrapper">
-        <div class="mainpage__swiper_container __container">
+      <div class="mainpage__swiper-wrapper">
+        <div class="mainpage__swiper-container __container">
           <div class="swiper-mainpage__pagination swiper-pagination"></div>
           <div class="swiper-mainpage__scrollbar swiper-scrollbar"></div>
         </div>

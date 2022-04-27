@@ -3,8 +3,13 @@
     <div class="header__container __container">
       <logo-white></logo-white>
       <logo-blue></logo-blue>
-      <the-header-menu :menus="menus"></the-header-menu>
-      <the-header-lang></the-header-lang>
+      <the-header-menu :menus="menus" :calculate="calculate"></the-header-menu>
+      <div class="header__lang lang">
+        <a href="#" class="lang__button icon-arrow-down">TM</a>
+        <div class="lang__menu">
+          <a href="#" class="lang__item">RU</a>
+        </div>
+      </div>
     </div>
   </header>
 </template>
@@ -22,7 +27,11 @@ export default {
     }
   },
   computed: {
-    ...mapGetters('client', ['imgURL', 'images', 'menus']),
+    ...mapGetters('client', ['imgURL', 'images', 'menus', 'languages']),
+    calculate() {
+      let locale = this.$i18n.locale
+      return this.languages?.filter((lang) => lang.short_name !== locale)
+    },
   },
   mounted() {
     console.log(this.menus)

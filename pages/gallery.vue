@@ -4,14 +4,82 @@
     <section class="gallery">
       <div class="gallery__container __container">
         <div class="gallery__row">
-          <div class="gallery__column" @click="isShow = true">
+          <div class="gallery__column">
             <div class="gallery__video">
               <div class="gallery__play-icon">
-                <img src="@/assets/client/img/gallery/play-icon.svg" alt="" />
+                <img src="/img/gallery/play-icon.svg" alt="" />
               </div>
               <div class="gallery__img-box">
-                <img src="@/assets/client/img/gallery/1.png" alt="" />
+                <img src="/img/gallery/1.png" alt="" />
               </div>
+            </div>
+          </div>
+          <div class="gallery__column">
+            <div class="gallery__video">
+              <div class="gallery__play-icon">
+                <img src="/img/gallery/play-icon.svg" alt="" />
+              </div>
+              <div class="gallery__img-box">
+                <img src="/img/gallery/2.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="gallery__column">
+            <div class="gallery__video">
+              <div class="gallery__play-icon">
+                <img src="/img/gallery/play-icon.svg" alt="" />
+              </div>
+              <div class="gallery__img-box">
+                <img src="/img/gallery/3.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="gallery__column">
+            <div class="gallery__video">
+              <div class="gallery__play-icon">
+                <img src="/img/gallery/play-icon.svg" alt="" />
+              </div>
+              <div class="gallery__img-box">
+                <img src="/img/gallery/4.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="gallery__column">
+            <div class="gallery__video">
+              <div class="gallery__play-icon">
+                <img src="/img/gallery/play-icon.svg" alt="" />
+              </div>
+              <div class="gallery__img-box">
+                <img src="/img/gallery/5.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="gallery__column">
+            <div class="gallery__video">
+              <div class="gallery__play-icon">
+                <img src="/img/gallery/play-icon.svg" alt="" />
+              </div>
+              <div class="gallery__img-box">
+                <img src="/img/gallery/6.png" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="gallery__column">
+            <div class="gallery__play-icon">
+              <img src="/img/gallery/play-icon.svg" alt="" />
+            </div>
+            <div class="gallery__img-box">
+              <img src="/img/gallery/7.png" alt="" />
+            </div>
+          </div>
+          <div class="gallery__column gallery__column_picture">
+            <div class="gallery__img-box">
+              <img src="/img/gallery/8.png" alt="" />
+            </div>
+          </div>
+          <div class="gallery__column gallery__column_picture">
+            <div class="gallery__img-box">
+              <img src="/img/gallery/9.png" alt="" />
             </div>
           </div>
         </div>
@@ -19,16 +87,22 @@
       <video-player
         :isShow="isShow"
         @closeModal="isShow = false"
-      ></video-player></section
-  ></span>
+      ></video-player>
+      <picture></picture>
+    </section>
+  </span>
 </template>
 
 <script>
 import Slider from '@/components/app/Slider.vue'
+import VideoPlayer from '@/components/app/popUp/VideoPlayer.vue'
+import Picture from '@/components/app/popUp/Picture.vue'
 export default {
   name: 'GalleryPage',
   components: {
     Slider,
+    VideoPlayer,
+    Picture,
   },
   data() {
     return {

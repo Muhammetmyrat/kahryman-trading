@@ -11,6 +11,10 @@ const state = () => ({
   agens: null,
   statistics: null,
   footer: null,
+  aboutSmallTitle: null,
+  aboutBigTitle: null,
+  aboutContent: null,
+  aboutImagePath: null,
 })
 
 export default {

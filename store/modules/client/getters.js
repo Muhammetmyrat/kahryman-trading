@@ -5,7 +5,22 @@ const images = (state) => {
   return state.headers?.iamges
 }
 const menus = (state) => {
-  return state.headers?.menu
+  let menus = [
+    { id: 0, path: '/' },
+    { id: 1, path: '/about-us' },
+    { id: 2, path: '/product' },
+    { id: 3, path: '/gallery' },
+    { id: 4, path: '/contact-us' },
+  ]
+  menus[0]['name'] = state.headers?.menu[0]?.name
+  menus[1]['name'] = state.headers?.menu[1]?.name
+  menus[2]['name'] = state.headers?.menu[2]?.name
+  menus[3]['name'] = state.headers?.menu[3]?.name
+  menus[4]['name'] = state.headers?.menu[4]?.name
+  return menus
+}
+const languages = (state) => {
+  return state.headers?.languages
 }
 const topicTitle = (state) => {
   return state.facilities?.topic_title
@@ -49,11 +64,39 @@ const agenciesText = (state) => {
 const statistics = (state) => {
   return state.statistics
 }
+const footerText = (state) => {
+  return state.footer?.text
+}
+const copyRight = (state) => {
+  return state.footer?.right
+}
+const address = (state) => {
+  return state.footer?.address
+}
+const phoneNumbers = (state) => {
+  return state.footer?.phone_numbers
+}
+const mails = (state) => {
+  return state.footer?.mails
+}
+const aboutSmallTitle = (state) => {
+  return state.aboutSmallTitle
+}
+const aboutBigTitle = (state) => {
+  return state.aboutBigTitle
+}
+const aboutContent = (state) => {
+  return state.aboutContent
+}
+const aboutImagePath = (state) => {
+  return state.aboutImagePath
+}
 
 export default {
   imgURL,
   images,
   menus,
+  languages,
   topicTitle,
   smallTitle,
   bigTitle,
@@ -65,4 +108,13 @@ export default {
   agenciesTitle,
   agenciesText,
   statistics,
+  footerText,
+  copyRight,
+  address,
+  phoneNumbers,
+  mails,
+  aboutSmallTitle,
+  aboutBigTitle,
+  aboutContent,
+  aboutImagePath,
 }

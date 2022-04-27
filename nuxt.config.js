@@ -31,19 +31,84 @@ export default {
 
   // Auto import components: https://go.nuxtjs.dev/config-component
   components: true,
-
+  buildModules: ['@nuxt/postcss8', '@nuxtjs/axios'],
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: ['@nuxtjs/axios'],
+  modules: [
+    '@nuxtjs/axios',
+    // "vue2-editor/nuxt",
+    '@nuxtjs/i18n',
+    '@nuxtjs/auth-next',
+  ],
+
+  build: {
+    transpile: ['lodash'],
+    postcss: {
+      plugins: {
+        tailwindcss: {},
+        autoprefixer: {},
+      },
+    },
+  },
+
+  auth: {
+    redirect: {
+      login: '/',
+      logout: '/',
+      callback: '/home',
+      home: '/home',
+    },
+    strategies: {
+      local: {
+        name: 'local',
+
+        token: {
+          property: 'token',
+          type: 'Bearer',
+          global: true,
+          //
+          // required: false,
+          // type: false,
+          // required: true,
+          // type: 'Bearer'
+        },
+        // user: {
+        //   // property: false,
+        //   autoFetch: false,
+        //   propertyName: false,
+        // },
+        // user: false,
+
+        endpoints: {
+          login: { url: '/login/admin', method: 'post', propertyName: 'token' },
+          logout: { url: '/logout', method: 'post' },
+          token: undefined,
+          user: false,
+          // user: {
+          //   // url: "/api/auth/user",
+          //   // propertyName: false,
+          //   // autoFetch: false,
+          //   // method: "get",
+          // },
+        },
+        // tokenRequired: true,
+      },
+      // tokenRequired: true,
+      // tokenType: false,
+    },
+    cookie: true,
+    localStorage: false,
+    token: {
+      prefix: 'token.',
+    },
+  },
 
   env: {
     baseUrl: process.env.BASE_API,
     siteUrl: process.env.SITE_URL,
   },
-
   axios: { baseURL: `${process.env.BASE_API}` },
-
   i18n: {
     baseUrl: `${process.env.SITE_URL}`,
     locales: [
@@ -68,29 +133,10 @@ export default {
     },
   },
 
-  auth: {
-    redirect: {
-      login: '/admin/login',
-      logout: '/admin/login',
-      callback: '/admin/login',
-      home: '/admin',
-    },
-    strategies: {
-      local: {
-        token: {
-          property: 'token',
-          type: false,
-        },
-        user: {
-          property: 'user',
-        },
-        endpoints: {
-          login: { url: '/login/admin', method: 'post' },
-          logout: false,
-          user: { url: '/admin/get-user-data', method: 'get' },
-        },
-      },
-    },
+  axios: {
+    baseURL: 'http://10.192.3.37:3001/api',
+
+    credentials: false,
   },
 
   router: {
@@ -99,5 +145,4 @@ export default {
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {},
 }

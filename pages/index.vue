@@ -1,14 +1,21 @@
 <template>
   <span>
     <slider></slider>
+    <section class="title-topics">
+      <div class="title-topics__container __container">
+        <h2 class="title-topics__title">{{ topicTitle }}</h2>
+      </div>
+    </section>
     <section class="topics">
+      <img src="/img/trading_topics/1.png" alt="" />
       <div class="topics__container __container">
-        <div class="topics__wrapper">
-          <h3 class="topics__title">{{ topicTitle }}</h3>
-          <div class="topics__cards">
-            <iframe src="" frameborder="0"></iframe>
-          </div>
-        </div>
+        <iframe
+          src="animation/index.html?topics=ClimateAction&lang=en&easyxdm=true&color=65ac1e&xdm_e=https%3A%2F%2Fwww.basf.com&xdm_c=default7558&xdm_p=1"
+          frameborder="0"
+          allowtransparency="true"
+          height="800"
+          width="1400"
+        ></iframe>
       </div>
     </section>
     <div class="facilities">
@@ -26,29 +33,27 @@
               <div class="facilities__items-first">
                 <div class="facilities__items-first-left">
                   <div class="facilities__items-first-left_img">
-                    <img :src="`${imgURL}/${itemsFirstLeftImg}`" alt="" />
+                    <img src="/img/facilities/02.png" alt="" />
                   </div>
                 </div>
                 <div class="facilities__items-first-right">
-                  <div
-                    class="facilities__items-first-right_img"
-                    v-for="itemsFirstRightImage in itemsFirstRightImages"
-                    :key="itemsFirstRightImage.id"
-                  >
-                    <img
-                      :src="`${imgURL}/${itemsFirstRightImage.image_path}`"
-                      alt=""
-                    />
+                  <div class="facilities__items-first-right_img">
+                    <img src="/img/facilities/01.png" alt="" />
+                  </div>
+                  <div class="facilities__items-first-right_img">
+                    <img src="/img/facilities/03.png" alt="" />
                   </div>
                 </div>
               </div>
               <div class="facilities__items-last">
-                <div
-                  class="facilities__items-last_img"
-                  v-for="itemsLastImage in itemsLastImages"
-                  :key="itemsLastImage.id"
-                >
-                  <img :src="`${imgURL}/${itemsLastImage.image_path}`" alt="" />
+                <div class="facilities__items-last_img">
+                  <img src="/img/facilities/04.png" alt="" />
+                </div>
+                <div class="facilities__items-last_img">
+                  <img src="/img/facilities/05.png" alt="" />
+                </div>
+                <div class="facilities__items-last_img">
+                  <img src="/img/facilities/06.png" alt="" />
                 </div>
               </div>
             </div>
@@ -57,17 +62,11 @@
         <slider-small :imgURL="imgURL" :sliders="sliders"></slider-small>
       </div>
     </div>
-    <section class="agency">
-      <div class="agency__container __container">
-        <div class="agency__wrapper">
-          <h1 class="agency__title">{{ agenciesTitle }}</h1>
-          <div class="agency__text">
-            <p>
-              {{ agenciesText }}
-            </p>
-          </div>
-          <agency-map :agencyStatistics="statistics"></agency-map>
-        </div>
+    <agency-map :agencyStatistics="statistics"></agency-map>
+    <section class="image">
+      <div class="image__container __container">
+        <div class="image__title">Order Procedures</div>
+        <div class="image__box"><img src="/img/1.png" alt="" /></div>
       </div>
     </section>
   </span>
@@ -84,14 +83,14 @@ export default {
   watch: {
     '$i18n.locale': async function () {
       await this.fetchHome({
-        url: `en`,
+        url: `${this.$i18n.locale}`,
         $nuxt: this.$nuxt,
       })
     },
   },
   async fetch() {
     await this.fetchHome({
-      url: `en`,
+      url: `${this.$i18n.locale}`,
       $nuxt: this.$nuxt,
     })
   },

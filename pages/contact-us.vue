@@ -10,10 +10,7 @@
               <div class="contact__address-title">Our contact address</div>
               <div class="contact__item">
                 <div class="contact__item-img">
-                  <img
-                    src="@/assets/client/img/contact-us/loaction.svg"
-                    alt=""
-                  />
+                  <img src="/img/contact-us/loaction.svg" alt="" />
                 </div>
                 <div class="contact__item-address">
                   Al Marar Building 196, Flat no. 110, Al Marar Dubai UAE
@@ -21,7 +18,7 @@
               </div>
               <div class="contact__item">
                 <div class="contact__item-img">
-                  <img src="@/assets/client/img/contact-us/mail.svg" alt="" />
+                  <img src="/img/contact-us/mail.svg" alt="" />
                 </div>
                 <div class="contact__item-address">
                   info@kahrymantrading.com
@@ -29,25 +26,19 @@
               </div>
               <div class="contact__item">
                 <div class="contact__item-img">
-                  <img src="@/assets/client/img/contact-us/phone.svg" alt="" />
+                  <img src="/img/contact-us/phone.svg" alt="" />
                 </div>
                 <div class="contact__item-address">+971 58 128 2568</div>
               </div>
               <div class="contact__social">
                 <a href="" class="contact__social-item"
-                  ><img
-                    src="@/assets/client/img/footer/social/facebook.svg"
-                    alt=""
+                  ><img src="/img/footer/social/facebook.svg" alt=""
                 /></a>
                 <a href="" class="contact__social-item"
-                  ><img
-                    src="@/assets/client/img/footer/social/instagram.svg"
-                    alt=""
+                  ><img src="/img/footer/social/instagram.svg" alt=""
                 /></a>
                 <a href="" class="contact__social-item"
-                  ><img
-                    src="@/assets/client/img/footer/social/twitter.svg"
-                    alt=""
+                  ><img src="/img/contact-us/linked-in.png" alt=""
                 /></a>
               </div>
             </div>
