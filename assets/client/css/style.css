@@ -2062,7 +2062,8 @@ body._lock {
 .contact-footer__item-text:hover {
   text-decoration: underline;
 }
-.contact-footer__item-text .social-footer {
+
+.social-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
