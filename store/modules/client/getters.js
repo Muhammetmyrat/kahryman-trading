@@ -35,20 +35,28 @@ const facilitiesText = (state) => {
   return state.strategy?.text
 }
 const itemsFirstLeftImg = (state) => {
-  const { image_path } = state.strategy?.images && state.strategy?.images[0]
-  return image_path
+  return (
+    state.strategy &&
+    state.strategy.images &&
+    state.strategy.images[0] &&
+    state.strategy.images[0].image_path
+  )
 }
 const itemsFirstRightImages = (state) => {
   const itemsFirstRightImg = []
   for (let i = 1; i <= 2; i++) {
-    itemsFirstRightImg.push(state.strategy?.images[i])
+    itemsFirstRightImg.push(
+      state.strategy && state.strategy.images && state.strategy.images[i]
+    )
   }
   return itemsFirstRightImg
 }
 const itemsLastImages = (state) => {
   const itemsLastImage = []
   for (let i = 3; i <= 5; i++) {
-    itemsLastImage.push(state.strategy?.images[i])
+    itemsLastImage.push(
+      state.strategy && state.strategy.images && state.strategy.images[i]
+    )
   }
   return itemsLastImage
 }
@@ -89,7 +97,26 @@ const aboutContent = (state) => {
   return state.aboutContent
 }
 const aboutImagePath = (state) => {
-  return state.aboutImagePath
+  return state.aboutImagePath && state.aboutImagePath.image_path
+}
+const itemsFirstLeftImgAbout = (state) => {
+  return (
+    state.aboutImages && state.aboutImages[0] && state.aboutImages[0].image_path
+  )
+}
+const itemsFirstRightImagesAbout = (state) => {
+  const itemsFirstRightImg = []
+  for (let i = 1; i <= 2; i++) {
+    itemsFirstRightImg.push(state.aboutImages && state.aboutImages[i])
+  }
+  return itemsFirstRightImg
+}
+const itemsLastImagesAbout = (state) => {
+  const itemsLastImage = []
+  for (let i = 3; i <= 5; i++) {
+    itemsLastImage.push(state.aboutImages && state.aboutImages[i])
+  }
+  return itemsLastImage
 }
 
 export default {
@@ -117,4 +144,7 @@ export default {
   aboutBigTitle,
   aboutContent,
   aboutImagePath,
+  itemsFirstLeftImgAbout,
+  itemsFirstRightImagesAbout,
+  itemsLastImagesAbout,
 }

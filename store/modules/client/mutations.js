@@ -12,11 +12,13 @@ const SET_HOME = (state, payload) => {
   state.map = payload.map
   state.statistics = payload.statistics
 }
-const SET_ABOUT_US = (state, payload) => {
-  state.aboutSmallTitle = payload.small_title
-  state.aboutBigTitle = payload.big_title
-  state.aboutImagePath = payload.aboutImagePath
-  state.aboutContent = payload.content
+const SET_ABOUT_US = (state, { data, images, image_path }) => {
+  console.log(data, images, image_path)
+  state.aboutSmallTitle = data.small_title
+  state.aboutBigTitle = data.big_title
+  state.aboutImagePath = image_path
+  state.aboutContent = data.content
+  state.aboutImages = images
 }
 
 export default {

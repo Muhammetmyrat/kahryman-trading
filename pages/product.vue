@@ -1,6 +1,6 @@
 <template>
   <span>
-    <slider></slider>
+    <slider :imgURL="imgURL" :sliders="headerSliders"></slider>
     <section class="product" :class="{ active: isActive }">
       <div class="product__pop-up">
         <div class="product__pop-upItem">
@@ -196,6 +196,7 @@
 
 <script>
 import Slider from '@/components/app/Slider.vue'
+import { mapGetters } from 'vuex'
 import lumpSulfur from '@/static/product-table/lumpSulfur'
 import urean46 from '@/static/product-table/urean46'
 import bitumen from '@/static/product-table/bitumen'
@@ -226,7 +227,9 @@ export default {
       popup: {},
     }
   },
-  mounted() {},
+  computed: {
+    ...mapGetters('client', ['imgURL', 'headerSliders']),
+  },
   methods: {
     readMore(popupDatas) {
       this.popup = popupDatas

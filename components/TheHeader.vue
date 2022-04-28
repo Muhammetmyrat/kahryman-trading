@@ -52,7 +52,7 @@ export default {
         this.$route.path === '/about-us' ||
         this.$route.path === `/${this.$i18n.locale}/about-us`
       ) {
-        return `about-us`
+        return `about`
       } else if (
         this.$route.path === '/product' ||
         this.$route.path === `/${this.$i18n.locale}/product`

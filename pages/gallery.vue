@@ -97,6 +97,7 @@
 import Slider from '@/components/app/Slider.vue'
 import VideoPlayer from '@/components/app/popUp/VideoPlayer.vue'
 import Picture from '@/components/app/popUp/Picture.vue'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'GalleryPage',
   components: {
@@ -108,6 +109,40 @@ export default {
     return {
       isShow: false,
     }
+  },
+  watch: {
+    '$i18n.locale': async function () {
+      await this.fetchGallery({
+        url: `${this.$i18n.locale}/gallery`,
+        $nuxt: this.$nuxt,
+      })
+    },
+  },
+  async fetch() {
+    await this.fetchGallery({
+      url: `${this.$i18n.locale}/gallery`,
+      $nuxt: this.$nuxt,
+    })
+  },
+  computed: {
+    ...mapGetters('client', [
+      'imgURL',
+      'headerSliders',
+      'topicTitle',
+      'smallTitle',
+      'bigTitle',
+      'facilitiesText',
+      'itemsFirstLeftImg',
+      'itemsFirstRightImages',
+      'itemsLastImages',
+      'sliders',
+      'agenciesTitle',
+      'agenciesText',
+      'statistics',
+    ]),
+  },
+  methods: {
+    ...mapActions('client', ['fetchGallery']),
   },
 }
 </script>
