@@ -1,6 +1,6 @@
 <template>
   <span>
-    <slider></slider>
+    <slider :imgURL="imgURL" :sliders="headerSliders"></slider>
     <section class="title-topics">
       <div class="title-topics__container __container">
         <h2 class="title-topics__title">{{ topicTitle }}</h2>
@@ -33,27 +33,40 @@
               <div class="facilities__items-first">
                 <div class="facilities__items-first-left">
                   <div class="facilities__items-first-left_img">
-                    <img src="/img/facilities/02.png" alt="" />
+                    <img
+                      :src="`${imgURL}/${itemsFirstLeftImg}-300.jpg`"
+                      alt=""
+                    />
                   </div>
                 </div>
                 <div class="facilities__items-first-right">
-                  <div class="facilities__items-first-right_img">
-                    <img src="/img/facilities/01.png" alt="" />
-                  </div>
-                  <div class="facilities__items-first-right_img">
-                    <img src="/img/facilities/03.png" alt="" />
+                  <div
+                    class="facilities__items-first-right_img"
+                    v-for="itemsFirstRightImage in itemsFirstRightImages"
+                    :key="itemsFirstRightImage.id"
+                  >
+                    <img
+                      :src="`${imgURL}/${
+                        itemsFirstRightImage && itemsFirstRightImage.image_path
+                      }-300.jpg`"
+                      alt=""
+                    />
                   </div>
                 </div>
               </div>
               <div class="facilities__items-last">
-                <div class="facilities__items-last_img">
-                  <img src="/img/facilities/04.png" alt="" />
-                </div>
-                <div class="facilities__items-last_img">
-                  <img src="/img/facilities/05.png" alt="" />
-                </div>
-                <div class="facilities__items-last_img">
-                  <img src="/img/facilities/06.png" alt="" />
+                <div
+                  class="facilities__items-last_img"
+                  v-for="itemsLastImage in itemsLastImages"
+                  :key="itemsLastImage.id"
+                >
+                  <img
+                    :src="`${imgURL}/${
+                      itemsLastImage && itemsLastImage.image_path
+                    }-300.jpg
+										`"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -62,7 +75,11 @@
         <slider-small :imgURL="imgURL" :sliders="sliders"></slider-small>
       </div>
     </div>
-    <agency-map :agencyStatistics="statistics"></agency-map>
+    <agency-map
+      :agenciesTitle="agenciesTitle"
+      :agenciesText="agenciesText"
+      :agencyStatistics="statistics"
+    ></agency-map>
     <section class="image">
       <div class="image__container __container">
         <div class="image__title">Order Procedures</div>
@@ -97,6 +114,7 @@ export default {
   computed: {
     ...mapGetters('client', [
       'imgURL',
+      'headerSliders',
       'topicTitle',
       'smallTitle',
       'bigTitle',

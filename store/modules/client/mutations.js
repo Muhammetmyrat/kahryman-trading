@@ -1,11 +1,16 @@
+const SET_HEADER = (state, payload) => {
+  state.headerSliders = payload.slider
+  state.headerMenus = payload.menu
+  state.headerLanguages = payload.languages
+}
+const SET_FOOTER = (state, payload) => {
+  state.footer = payload
+}
 const SET_HOME = (state, payload) => {
-  state.headers = payload.header
-  state.topics = payload.topics
-  state.facilities = payload.faciliti
+  state.strategy = payload.strategy
   state.sliders = payload.slider
-  state.agens = payload.agens
+  state.map = payload.map
   state.statistics = payload.statistics
-  state.footer = payload.footer
 }
 const SET_ABOUT_US = (state, payload) => {
   state.aboutSmallTitle = payload.small_title
@@ -15,6 +20,8 @@ const SET_ABOUT_US = (state, payload) => {
 }
 
 export default {
+  SET_HEADER,
+  SET_FOOTER,
   SET_HOME,
   SET_ABOUT_US,
 }

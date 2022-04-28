@@ -1,44 +1,54 @@
 <template>
   <div class="footer__contact contact-footer">
-    <p class="contact-footer__text">
-      {{ footerText }}
-    </p>
+    <p class="contact-footer__text">{{ footerText }}</p>
     <div class="contact-footer__items">
       <div class="contact-footer__item">
         <div class="contact-footer__item_icon">
           <img src="/img/footer/icons/gps.svg" />
         </div>
-        <p
-          class="contact-footer__item_text"
-          v-for="item in address"
-          :key="item.id"
-        >
-          {{ item.address }}
-        </p>
+        <div class="contact-footer__item-textBox">
+          <a
+            href="#"
+            @click.prevent
+            class="contact-footer__item-text"
+            v-for="item in address"
+            :key="item.id"
+          >
+            {{ item.address }}
+          </a>
+        </div>
       </div>
       <div class="contact-footer__item">
         <div class="contact-footer__item_icon">
           <img src="/img/footer/icons/mail.svg" />
         </div>
-        <p
-          class="contact-footer__item_text"
-          v-for="mail in mails"
-          :key="mail.id"
-        >
-          {{ mail.mail }}
-        </p>
+        <div class="contact-footer__item-textBox">
+          <a
+            target="_blank"
+            class="contact-footer__item-text"
+            v-for="mail in mails"
+            :key="mail.id"
+            :href="calculateContact(mail.mail, 'mail')"
+          >
+            {{ mail.mail }}
+          </a>
+        </div>
       </div>
       <div class="contact-footer__item">
         <div class="contact-footer__item_icon">
           <img src="/img/footer/icons/phone.svg" />
         </div>
-        <p
-          class="contact-footer__item_text"
-          v-for="phoneNumber in phoneNumbers"
-          :key="phoneNumber.id"
-        >
-          {{ phoneNumber.number }}
-        </p>
+        <div class="contact-footer__item-textBox">
+          <a
+            target="_blank"
+            class="contact-footer__item-text"
+            v-for="phoneNumber in phoneNumbers"
+            :key="phoneNumber.id"
+            :href="calculateContact(phoneNumber.number, 'tel')"
+          >
+            {{ phoneNumber.number }}
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -62,6 +72,15 @@ export default {
     mails: {
       type: Array,
       default: () => [],
+    },
+  },
+  methods: {
+    calculateContact(data, text) {
+      if (text == 'tel') {
+        return `tel:${data}`
+      } else if (text == 'mail') {
+        return `mailto:${data}`
+      }
     },
   },
 }

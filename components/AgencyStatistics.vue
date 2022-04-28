@@ -5,8 +5,13 @@
         <img src="/img/global_agencies/statistic-1.svg" alt="" />
       </div>
       <div class="agency__number">
-        <h5 class="counter" :data-target="statistics[0].number">+0</h5>
-        <p>{{ statistics[0].title }}</p>
+        <h5
+          class="counter"
+          :data-target="statistics && statistics[0] && statistics[0].number"
+        >
+          +0
+        </h5>
+        <p>{{ statistics && statistics[0] && statistics[0].title }}</p>
       </div>
     </div>
     <div class="agency__item">
@@ -14,8 +19,13 @@
         <img src="/img/global_agencies/statistic-2.svg" alt="" />
       </div>
       <div class="agency__number">
-        <h5 class="counter" :data-target="statistics[1].number">+0</h5>
-        <p>{{ statistics[1].title }}</p>
+        <h5
+          class="counter"
+          :data-target="statistics && statistics[1] && statistics[1].number"
+        >
+          +0
+        </h5>
+        <p>{{ statistics && statistics[1] && statistics[1].title }}</p>
       </div>
     </div>
     <div class="agency__item">

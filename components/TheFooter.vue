@@ -21,7 +21,7 @@
 
 <script>
 import LogoWhite from './app/logo/LogoWhite.vue'
-import { mapGetters } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 export default {
   components: { LogoWhite },
   computed: {
@@ -32,6 +32,23 @@ export default {
       'phoneNumbers',
       'mails',
     ]),
+  },
+  watch: {
+    '$i18n.locale': async function () {
+      await this.fetchFooter({
+        url: `${this.$i18n.locale}/footer`,
+        $nuxt: this.$nuxt,
+      })
+    },
+  },
+  async fetch() {
+    await this.fetchFooter({
+      url: `${this.$i18n.locale}/footer`,
+      $nuxt: this.$nuxt,
+    })
+  },
+  methods: {
+    ...mapActions('client', ['fetchFooter']),
   },
 }
 </script>

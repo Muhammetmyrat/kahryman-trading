@@ -10,7 +10,7 @@ module.exports = {
   content: [
     // "./components/**/*.{vue,js}",
     // "./layouts/**/*.vue",
-    './pages/admin/**/*.vue',
+    '.	/pages/admin/**/*.vue',
     './pages/login/**/*.vue',
     './assets/**/*.svg',
     // "./pages/**/*.vue",

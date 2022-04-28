@@ -10,7 +10,7 @@
         v-for="slider in sliders"
         :key="slider.id"
       >
-        <img :src="`${imgURL}/${slider.image_path}`" alt="" />
+        <img :src="`${imgURL}/${slider.image_path}-300.jpg`" alt="" />
       </swiper-slide>
     </swiper>
   </div>
@@ -37,25 +37,28 @@ export default {
     return {
       swiperSmallOptions: {
         slidesPerView: 3,
-        slidesPerGroup: 3,
-        breakpoints: {
-          600: {
-            slidesPerView: 4,
-            slidesPerGroup: 4,
-          },
-          900: {
-            slidesPerView: 5,
-            slidesPerGroup: 5,
-          },
-          1200: {
-            slidesPerView: 6,
-            slidesPerGroup: 6,
-          },
-        },
+        speed: 1000,
+        loop: true,
         keyboard: {
           enabled: true,
           onlyInViewport: true,
           pageUpDown: true,
+        },
+        autoplay: {
+          delay: 2000,
+          reverseDirection: true,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          600: {
+            slidesPerView: 4,
+          },
+          900: {
+            slidesPerView: 5,
+          },
+          1200: {
+            slidesPerView: 6,
+          },
         },
       },
     }

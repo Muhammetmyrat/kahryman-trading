@@ -13,7 +13,6 @@
           }}</nuxt-link>
         </li>
       </ul>
-      <the-header-lang :languages="calculate"></the-header-lang>
     </nav>
   </menu>
 </template>
@@ -22,10 +21,6 @@
 export default {
   props: {
     menus: {
-      type: Array,
-      default: () => [],
-    },
-    calculate: {
       type: Array,
       default: () => [],
     },

@@ -2,14 +2,10 @@
   <section class="agency">
     <div class="agency__container __container">
       <div class="agency__wrapper">
-        <h1 class="agency__title">OUR GLOBAL bUSINESS COORDINATES</h1>
+        <h1 class="agency__title">{{ agenciesTitle }}</h1>
         <div class="agency__text">
           <p>
-            Kahryman Trading has established long-standing partnerships with a
-            number of global fertilizer and petrochemical companies in Middle
-            East, China, India, Turkey, Africa and CIS countries which have
-            resulted in a series of mutually beneficial investments and
-            initiatives.
+            {{ agenciesText }}
           </p>
         </div>
         <div class="agency__map">
@@ -53,6 +49,14 @@
 <script>
 export default {
   props: {
+    agenciesTitle: {
+      type: String,
+      default: '',
+    },
+    agenciesText: {
+      type: String,
+      default: '',
+    },
     agencyStatistics: {
       type: Array,
       default: () => [],

@@ -6,72 +6,22 @@
         :options="swiperOptions"
         class="swiper-mainpage__wrapper swiper-wrapper"
       >
-        <swiper-slide class="swiper-mainpage__slide swiper-slide">
+        <swiper-slide
+          class="swiper-mainpage__slide swiper-slide"
+          v-for="slider in sliders"
+          :key="slider.id"
+        >
           <div class="swiper-mainpage__img">
-            <img src="/img/mainpage/01.png" />
+            <img :src="`${imgURL}/${slider && slider.image_path}-700.jpg`" />
           </div>
           <div class="swiper-mainpage__body __container body-mainpage">
             <div class="body-mainpage__text-box" data-swiper-parallax="-300%">
               <h1 class="body-mainpage__title">
-                Feeding the world, caring the earth
+                {{ slider && slider.small_text }}
               </h1>
-              <p class="body-mainpage__subtitle">potassium chloride</p>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide class="swiper-mainpage__slide swiper-slide">
-          <div class="swiper-mainpage__img">
-            <img src="/img/mainpage/02.png" />
-          </div>
-          <div class="swiper-mainpage__body __container body-mainpage">
-            <div class="body-mainpage__text-box" data-swiper-parallax="-300%">
-              <p class="body-mainpage__subtitle">potassium chloride</p>
-              <h1 class="body-mainpage__title">
-                Our services and our service is a solution before the customer's
-                problems arise
-              </h1>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide class="swiper-mainpage__slide swiper-slide">
-          <div class="swiper-mainpage__img">
-            <img src="/img/mainpage/03.png" />
-          </div>
-          <div class="swiper-mainpage__body __container body-mainpage">
-            <div class="body-mainpage__text-box" data-swiper-parallax="-300%">
-              <p class="body-mainpage__subtitle">potassium chloride</p>
-              <h1 class="body-mainpage__title">
-                Our services and our service is a solution before the customer's
-                problems arise
-              </h1>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide class="swiper-mainpage__slide swiper-slide">
-          <div class="swiper-mainpage__img">
-            <img src="/img/mainpage/04.png" />
-          </div>
-          <div class="swiper-mainpage__body __container body-mainpage">
-            <div class="body-mainpage__text-box" data-swiper-parallax="-300%">
-              <p class="body-mainpage__subtitle">potassium chloride</p>
-              <h1 class="body-mainpage__title">
-                Our services and our service is a solution before the customer's
-                problems arise
-              </h1>
-            </div>
-          </div>
-        </swiper-slide>
-        <swiper-slide class="swiper-mainpage__slide swiper-slide">
-          <div class="swiper-mainpage__img">
-            <img src="/img/mainpage/05.png" />
-          </div>
-          <div class="swiper-mainpage__body __container body-mainpage">
-            <div class="body-mainpage__text-box" data-swiper-parallax="-300%">
-              <p class="body-mainpage__subtitle">potassium chloride</p>
-              <h1 class="body-mainpage__title">
-                Our services and our service is a solution before the customer's
-                problems arise
-              </h1>
+              <p class="body-mainpage__subtitle">
+                {{ slider && slider.text }}
+              </p>
             </div>
           </div>
         </swiper-slide>
@@ -92,6 +42,16 @@ export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  props: {
+    imgURL: {
+      type: String,
+      default: '',
+    },
+    sliders: {
+      type: Array,
+      default: () => [],
+    },
   },
   data() {
     return {

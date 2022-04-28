@@ -1,8 +1,8 @@
 const imgURL = (state) => {
   return state.imgURL
 }
-const images = (state) => {
-  return state.headers?.iamges
+const headerSliders = (state) => {
+  return state.headerSliders
 }
 const menus = (state) => {
   let menus = [
@@ -12,43 +12,43 @@ const menus = (state) => {
     { id: 3, path: '/gallery' },
     { id: 4, path: '/contact-us' },
   ]
-  menus[0]['name'] = state.headers?.menu[0]?.name
-  menus[1]['name'] = state.headers?.menu[1]?.name
-  menus[2]['name'] = state.headers?.menu[2]?.name
-  menus[3]['name'] = state.headers?.menu[3]?.name
-  menus[4]['name'] = state.headers?.menu[4]?.name
+  menus[0]['name'] = state.headerMenus[0]?.name
+  menus[1]['name'] = state.headerMenus[1]?.name
+  menus[2]['name'] = state.headerMenus[2]?.name
+  menus[3]['name'] = state.headerMenus[3]?.name
+  menus[4]['name'] = state.headerMenus[4]?.name
   return menus
 }
 const languages = (state) => {
-  return state.headers?.languages
+  return state.headerLanguages
 }
 const topicTitle = (state) => {
-  return state.facilities?.topic_title
+  return state.strategy?.topic_title
 }
 const smallTitle = (state) => {
-  return state.facilities?.small_title
+  return state.strategy?.small_title
 }
 const bigTitle = (state) => {
-  return state.facilities?.big_title
+  return state.strategy?.big_title
 }
 const facilitiesText = (state) => {
-  return state.facilities?.text
+  return state.strategy?.text
 }
 const itemsFirstLeftImg = (state) => {
-  const { image_path } = state.facilities?.images && state.facilities?.images[0]
+  const { image_path } = state.strategy?.images && state.strategy?.images[0]
   return image_path
 }
 const itemsFirstRightImages = (state) => {
   const itemsFirstRightImg = []
   for (let i = 1; i <= 2; i++) {
-    itemsFirstRightImg.push(state.facilities?.images[i])
+    itemsFirstRightImg.push(state.strategy?.images[i])
   }
   return itemsFirstRightImg
 }
 const itemsLastImages = (state) => {
   const itemsLastImage = []
   for (let i = 3; i <= 5; i++) {
-    itemsLastImage.push(state.facilities?.images[i])
+    itemsLastImage.push(state.strategy?.images[i])
   }
   return itemsLastImage
 }
@@ -56,10 +56,10 @@ const sliders = (state) => {
   return state.sliders
 }
 const agenciesTitle = (state) => {
-  return state.agens?.title
+  return state.map?.title
 }
 const agenciesText = (state) => {
-  return state.agens?.content
+  return state.map?.content
 }
 const statistics = (state) => {
   return state.statistics
@@ -68,7 +68,7 @@ const footerText = (state) => {
   return state.footer?.text
 }
 const copyRight = (state) => {
-  return state.footer?.right
+  return state.footer?.bottum_title
 }
 const address = (state) => {
   return state.footer?.address
@@ -94,7 +94,7 @@ const aboutImagePath = (state) => {
 
 export default {
   imgURL,
-  images,
+  headerSliders,
   menus,
   languages,
   topicTitle,
