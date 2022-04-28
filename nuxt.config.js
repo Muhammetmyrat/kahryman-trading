@@ -27,7 +27,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/vue-awesome-swiper'],
+  plugins: [
+    { src: '@/plugins/vue-plyr', mode: 'client' },
+    '@/plugins/vue-awesome-swiper',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-component
   components: true,

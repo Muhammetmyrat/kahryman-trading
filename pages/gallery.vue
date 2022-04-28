@@ -1,94 +1,73 @@
 <template>
   <span>
-    <slider></slider>
+    <slider :imgURL="imgURL" :sliders="headerSliders"></slider>
     <section class="gallery">
       <div class="gallery__container __container">
         <div class="gallery__row">
-          <div class="gallery__column">
-            <div class="gallery__video">
-              <div class="gallery__play-icon">
-                <img src="/img/gallery/play-icon.svg" alt="" />
-              </div>
-              <div class="gallery__img-box">
-                <img src="/img/gallery/1.png" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="gallery__column">
-            <div class="gallery__video">
-              <div class="gallery__play-icon">
-                <img src="/img/gallery/play-icon.svg" alt="" />
-              </div>
-              <div class="gallery__img-box">
-                <img src="/img/gallery/2.png" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="gallery__column">
-            <div class="gallery__video">
-              <div class="gallery__play-icon">
-                <img src="/img/gallery/play-icon.svg" alt="" />
-              </div>
-              <div class="gallery__img-box">
-                <img src="/img/gallery/3.png" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="gallery__column">
-            <div class="gallery__video">
-              <div class="gallery__play-icon">
-                <img src="/img/gallery/play-icon.svg" alt="" />
-              </div>
-              <div class="gallery__img-box">
-                <img src="/img/gallery/4.png" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="gallery__column">
-            <div class="gallery__video">
-              <div class="gallery__play-icon">
-                <img src="/img/gallery/play-icon.svg" alt="" />
-              </div>
-              <div class="gallery__img-box">
-                <img src="/img/gallery/5.png" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="gallery__column">
-            <div class="gallery__video">
-              <div class="gallery__play-icon">
-                <img src="/img/gallery/play-icon.svg" alt="" />
-              </div>
-              <div class="gallery__img-box">
-                <img src="/img/gallery/6.png" alt="" />
-              </div>
-            </div>
-          </div>
-          <div class="gallery__column">
-            <div class="gallery__play-icon">
-              <img src="/img/gallery/play-icon.svg" alt="" />
-            </div>
+          <div
+            class="gallery__column gallery__column_picture"
+            v-for="galleryImageOne in galleryImagesOne"
+            :key="galleryImageOne && galleryImageOne.id"
+            @click="showImage(galleryImageOne)"
+          >
             <div class="gallery__img-box">
-              <img src="/img/gallery/7.png" alt="" />
+              <img
+                :src="`${imgURL}/${
+                  galleryImageOne && galleryImageOne.gallery_path
+                }-300.jpg`"
+                alt=""
+              />
             </div>
           </div>
-          <div class="gallery__column gallery__column_picture">
-            <div class="gallery__img-box">
-              <img src="/img/gallery/8.png" alt="" />
+          <div
+            class="gallery__column"
+            v-for="galleryVideo in galleryVideos"
+            :key="galleryVideo && galleryVideo.id"
+            @click="showVideo(galleryVideo)"
+          >
+            <div class="gallery__video">
+              <div class="gallery__play-icon">
+                <img src="/img/gallery/play-icon.svg" alt="" />
+              </div>
+              <div class="gallery__img-box">
+                <img
+                  :src="`${imgURL}/${
+                    galleryVideo && galleryVideo.gallery_path
+                  }`"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
-          <div class="gallery__column gallery__column_picture">
+          <div
+            class="gallery__column gallery__column_picture"
+            v-for="galleryImageTwo in galleryImagesTwo"
+            :key="galleryImageTwo && galleryImageTwo.id"
+            @click="showImage(galleryImageTwo)"
+          >
             <div class="gallery__img-box">
-              <img src="/img/gallery/9.png" alt="" />
+              <img
+                :src="`${imgURL}/${
+                  galleryImageTwo && galleryImageTwo.gallery_path
+                }-300.jpg`"
+                alt=""
+              />
             </div>
           </div>
         </div>
       </div>
       <video-player
-        :isShow="isShow"
-        @closeModal="isShow = false"
+        :isShowVideo="isShowVideo"
+        :imgURL="imgURL"
+        :video="video"
+        @closeModal="isShowVideo = false"
       ></video-player>
-      <picture></picture>
+      <picture
+        :isShowImage="isShowImage"
+        :imgURL="imgURL"
+        :image="image"
+        @closeModal="isShowImage = false"
+      ></picture>
     </section>
   </span>
 </template>
@@ -107,7 +86,10 @@ export default {
   },
   data() {
     return {
-      isShow: false,
+      isShowVideo: false,
+      video: '',
+      isShowImage: false,
+      image: '',
     }
   },
   watch: {
@@ -128,21 +110,21 @@ export default {
     ...mapGetters('client', [
       'imgURL',
       'headerSliders',
-      'topicTitle',
-      'smallTitle',
-      'bigTitle',
-      'facilitiesText',
-      'itemsFirstLeftImg',
-      'itemsFirstRightImages',
-      'itemsLastImages',
-      'sliders',
-      'agenciesTitle',
-      'agenciesText',
-      'statistics',
+      'galleryImagesOne',
+      'galleryImagesTwo',
+      'galleryVideos',
     ]),
   },
   methods: {
     ...mapActions('client', ['fetchGallery']),
+    showVideo(video) {
+      this.video = video?.gallery_path
+      this.isShowVideo = true
+    },
+    showImage(image) {
+      this.image = image?.gallery_path
+      this.isShowImage = true
+    },
   },
 }
 </script>

@@ -1,14 +1,34 @@
 <template>
-  <div class="picture">
+  <div class="picture" :class="{ visible: isShowImage }">
     <div class="picture__container">
       <span class="picture__close"></span>
       <div class="picture__img">
-        <img src="/img/gallery/1.png" alt="" />
+        <img :src="`${imgURL}/${image}-700.jpg`" alt="" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    isShowImage: {
+      type: Boolean,
+      default: false,
+    },
+    imgURL: {
+      type: String,
+      default: '',
+    },
+    image: {
+      type: String,
+      default: '',
+    },
+  },
+  methods: {
+    close() {
+      this.$emit('closeModal')
+    },
+  },
+}
 </script>

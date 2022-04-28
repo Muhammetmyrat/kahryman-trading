@@ -118,6 +118,29 @@ const itemsLastImagesAbout = (state) => {
   }
   return itemsLastImage
 }
+const galleryImagesOne = (state) => {
+  let part = Math.floor(state.galleryImages?.length / 2)
+  console.log(part)
+  const galleryImages = []
+  for (let i = 0; i <= part - 1; i++) {
+    galleryImages.push(state.galleryImages[i])
+  }
+
+  return galleryImages
+}
+const galleryImagesTwo = (state) => {
+  let part = Math.floor(state.galleryImages?.length / 2)
+  console.log(state.galleryImages?.length)
+  const galleryImages = []
+  for (let i = part; i <= state.galleryImages?.length - 1; i++) {
+    galleryImages.push(state.galleryImages[i])
+  }
+  console.log(galleryImages)
+  return galleryImages
+}
+const galleryVideos = (state) => {
+  return state.galleryVideos
+}
 
 export default {
   imgURL,
@@ -147,4 +170,7 @@ export default {
   itemsFirstLeftImgAbout,
   itemsFirstRightImagesAbout,
   itemsLastImagesAbout,
+  galleryImagesOne,
+  galleryImagesTwo,
+  galleryVideos,
 }

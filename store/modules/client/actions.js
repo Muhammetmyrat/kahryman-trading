@@ -53,7 +53,7 @@ const fetchGallery = async ({ commit }, { url, $nuxt }) => {
     const { images } = data
     const { videos } = data
     console.log(images, videos)
-    // commit('SET_ABOUT_US', { images, videos })
+    commit('SET_GALLERY', { images, videos })
   } catch (e) {
     if (e && e.response && e.response.status === 404) {
       return $nuxt.error({ statusCode: 404, message: e.message })

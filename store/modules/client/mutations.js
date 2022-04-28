@@ -20,10 +20,15 @@ const SET_ABOUT_US = (state, { data, images, image_path }) => {
   state.aboutContent = data.content
   state.aboutImages = images
 }
+const SET_GALLERY = (state, { images, videos }) => {
+  state.galleryImages = images
+  state.galleryVideos = videos
+}
 
 export default {
   SET_HEADER,
   SET_FOOTER,
   SET_HOME,
   SET_ABOUT_US,
+  SET_GALLERY,
 }
