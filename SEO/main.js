@@ -32,11 +32,11 @@ export default {
       content: `1000`,
     },
     { name: 'format-detection', content: 'telephone=no' },
-    { name: 'yandex-verification', content: 'a375551a12b0183c' },
-    {
-      name: 'google-site-verification',
-      content: 'q1L3TpCQFxZhbxjqCJX41Xvod0DiuZI0ElTHiF3Vh7A',
-    },
+    // { name: 'yandex-verification', content: 'a375551a12b0183c' },
+    // {
+    //   name: 'google-site-verification',
+    //   content: 'q1L3TpCQFxZhbxjqCJX41Xvod0DiuZI0ElTHiF3Vh7A',
+    // },
     { name: 'theme-color', content: '#252c54' },
     { name: 'msapplication-navbutton-color', content: '#252c54' },
     { name: 'apple-mobile-web-app-status-bar-style', content: '#252c54' },

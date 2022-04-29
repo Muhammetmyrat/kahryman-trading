@@ -52,6 +52,47 @@ import BigPicture from '@/components/app/popUp/BigPicture.vue'
 import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'GalleryPage',
+  head() {
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+    return {
+      title: this.$t('gallery'),
+      meta: [
+        {
+          property: 'og:local',
+          content: this.$i18n.locale,
+        },
+        {
+          property: 'og:type',
+          content: 'article',
+        },
+        {
+          property: 'og:title',
+          content: this.$t('gallery'),
+        },
+        {
+          property: 'og:url',
+          content: `${process.env.siteUrl}${this.localePath(this.$route.path)}`,
+        },
+        {
+          property: 'og:site_name',
+          content: 'KahrymanTrading',
+        },
+        {
+          name: 'twitter:title',
+          content: this.$t('gallery'),
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary',
+        },
+        {
+          name: 'twitter:site',
+          content: 'KahrymanTrading',
+        },
+        ...i18nHead.link,
+      ],
+    }
+  },
   components: {
     VideoPlayer,
     BigPicture,

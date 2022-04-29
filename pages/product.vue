@@ -201,6 +201,47 @@ import bitumen6070 from '@/static/product-table/bitumen6070'
 
 export default {
   name: 'ProductPage',
+  head() {
+    const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+    return {
+      title: this.$t('product'),
+      meta: [
+        {
+          property: 'og:local',
+          content: this.$i18n.locale,
+        },
+        {
+          property: 'og:type',
+          content: 'article',
+        },
+        {
+          property: 'og:title',
+          content: this.$t('product'),
+        },
+        {
+          property: 'og:url',
+          content: `${process.env.siteUrl}${this.localePath(this.$route.path)}`,
+        },
+        {
+          property: 'og:site_name',
+          content: 'KahrymanTrading',
+        },
+        {
+          name: 'twitter:title',
+          content: this.$t('product'),
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary',
+        },
+        {
+          name: 'twitter:site',
+          content: 'KahrymanTrading',
+        },
+        ...i18nHead.link,
+      ],
+    }
+  },
   data() {
     return {
       isActive: false,

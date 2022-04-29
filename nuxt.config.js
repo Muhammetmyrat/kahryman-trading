@@ -1,23 +1,11 @@
 import en from './locales/en'
 // import ru from './locales/ru'
+import metaHome from './SEO/main'
+require('dotenv').config()
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-  head: {
-    titleTemplate: '%s | KahrymanTrading',
-    title: 'KahrymanTrading',
-    htmlAttrs: {
-      lang: 'en',
-    },
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
-  },
-
+  head: metaHome,
   server: {
     port: 3000,
     host: '0.0.0.0',
