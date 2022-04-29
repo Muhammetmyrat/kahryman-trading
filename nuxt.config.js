@@ -27,6 +27,11 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
+  loading: {
+    color: '#252c54',
+    height: '2px',
+  },
+
   plugins: [
     { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
     { src: '@/plugins/vue-plyr', mode: 'client' },
@@ -134,12 +139,6 @@ export default {
         // ru,
       },
     },
-  },
-
-  axios: {
-    baseURL: 'http://10.192.3.37:3001/api',
-
-    credentials: false,
   },
 
   router: {

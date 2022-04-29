@@ -39,9 +39,9 @@ export default {
 <style scoped>
 .video__plyr {
   --plyr-color-main: #252c54;
+  height: 600px;
 }
 .video__plyr .plyr {
   width: 100%;
-  height: auto;
 }
 </style>
