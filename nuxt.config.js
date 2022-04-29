@@ -130,8 +130,7 @@ export default {
   },
 
   router: {
-    linkExactActiveClass: '_active',
-    linkActiveClass: '_active',
+    linkExactActiveClass: 'active',
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
