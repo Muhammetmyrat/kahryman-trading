@@ -145,6 +145,15 @@ const contactMessage = (state) => {
 const contactButtonText = (state) => {
   return state.contact?.button_text
 }
+const contactAddress = (state) => {
+  return state.contact?.address
+}
+const contactPhoneNumbers = (state) => {
+  return state.contact?.phone_numbers
+}
+const contactMails = (state) => {
+  return state.contact?.mails
+}
 
 export default {
   imgURL,
@@ -183,4 +192,7 @@ export default {
   contactSubject,
   contactMessage,
   contactButtonText,
+  contactAddress,
+  contactPhoneNumbers,
+  contactMails,
 }
