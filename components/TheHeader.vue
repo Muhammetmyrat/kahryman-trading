@@ -4,7 +4,7 @@
       <logo-white></logo-white>
       <logo-blue></logo-blue>
       <the-header-menu :menus="menus" :calculate="calculate"></the-header-menu>
-      <the-header-lang :languages="calculate"></the-header-lang>
+      <!-- <the-header-lang :languages="calculate"></the-header-lang> -->
     </div>
   </header>
 </template>

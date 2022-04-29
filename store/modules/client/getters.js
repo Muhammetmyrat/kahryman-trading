@@ -118,28 +118,32 @@ const itemsLastImagesAbout = (state) => {
   }
   return itemsLastImage
 }
-const galleryImagesOne = (state) => {
-  let part = Math.floor(state.galleryImages?.length / 2)
-  console.log(part)
-  const galleryImages = []
-  for (let i = 0; i <= part - 1; i++) {
-    galleryImages.push(state.galleryImages[i])
-  }
-
-  return galleryImages
+const gallerys = (state) => {
+  return state.gallerys
 }
-const galleryImagesTwo = (state) => {
-  let part = Math.floor(state.galleryImages?.length / 2)
-  console.log(state.galleryImages?.length)
-  const galleryImages = []
-  for (let i = part; i <= state.galleryImages?.length - 1; i++) {
-    galleryImages.push(state.galleryImages[i])
-  }
-  console.log(galleryImages)
-  return galleryImages
+const contactTitle = (state) => {
+  return state.contact?.title
 }
-const galleryVideos = (state) => {
-  return state.galleryVideos
+const contactTitleAddress = (state) => {
+  return state.contact?.title_address
+}
+const contactName = (state) => {
+  return state.contact?.name
+}
+const contactCompanyName = (state) => {
+  return state.contact?.company_name
+}
+const contactMail = (state) => {
+  return state.contact?.mail
+}
+const contactSubject = (state) => {
+  return state.contact?.subject
+}
+const contactMessage = (state) => {
+  return state.contact?.message
+}
+const contactButtonText = (state) => {
+  return state.contact?.button_text
 }
 
 export default {
@@ -170,7 +174,13 @@ export default {
   itemsFirstLeftImgAbout,
   itemsFirstRightImagesAbout,
   itemsLastImagesAbout,
-  galleryImagesOne,
-  galleryImagesTwo,
-  galleryVideos,
+  gallerys,
+  contactTitle,
+  contactTitleAddress,
+  contactName,
+  contactCompanyName,
+  contactMail,
+  contactSubject,
+  contactMessage,
+  contactButtonText,
 }

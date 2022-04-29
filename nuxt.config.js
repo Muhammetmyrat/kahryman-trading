@@ -1,5 +1,5 @@
 import en from './locales/en'
-import ru from './locales/ru'
+// import ru from './locales/ru'
 
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -28,8 +28,8 @@ export default {
    ** Plugins to load before mounting the App
    */
   plugins: [
+    { src: '@/plugins/vue-awesome-swiper', mode: 'client' },
     { src: '@/plugins/vue-plyr', mode: 'client' },
-    '@/plugins/vue-awesome-swiper',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-component
@@ -123,7 +123,7 @@ export default {
         file: 'en',
         isCatchallLocale: true,
       },
-      { code: 'ru', lang: 'RU', name: 'RU', iso: 'ru-RU', file: 'ru' },
+      // { code: 'ru', lang: 'RU', name: 'RU', iso: 'ru-RU', file: 'ru' },
     ],
     defaultLocale: 'en',
     seo: true,
@@ -131,7 +131,7 @@ export default {
       fallbackLocale: 'en',
       messages: {
         en,
-        ru,
+        // ru,
       },
     },
   },

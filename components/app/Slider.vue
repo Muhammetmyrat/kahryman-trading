@@ -8,8 +8,8 @@
       >
         <swiper-slide
           class="swiper-mainpage__slide swiper-slide"
-          v-for="slider in sliders"
-          :key="slider.id"
+          v-for="slider in headerSliders"
+          :key="slider && slider.id"
         >
           <div class="swiper-mainpage__img">
             <img :src="`${imgURL}/${slider && slider.image_path}-700.jpg`" />
@@ -38,20 +38,11 @@
 
 <script>
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
+import { mapGetters } from 'vuex'
 export default {
   components: {
     Swiper,
     SwiperSlide,
-  },
-  props: {
-    imgURL: {
-      type: String,
-      default: '',
-    },
-    sliders: {
-      type: Array,
-      default: () => [],
-    },
   },
   data() {
     return {
@@ -96,6 +87,7 @@ export default {
     }
   },
   computed: {
+    ...mapGetters('client', ['imgURL', 'headerSliders']),
     swiper() {
       return this.$refs.mySwiper.$swiper
     },

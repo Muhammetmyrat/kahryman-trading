@@ -1,88 +1,60 @@
 <template>
-  <span>
-    <slider :imgURL="imgURL" :sliders="headerSliders"></slider>
-    <section class="gallery">
-      <div class="gallery__container __container">
-        <div class="gallery__row">
-          <div
-            class="gallery__column gallery__column_picture"
-            v-for="galleryImageOne in galleryImagesOne"
-            :key="galleryImageOne && galleryImageOne.id"
-            @click="showImage(galleryImageOne)"
-          >
+  <section class="gallery">
+    <div class="gallery__container __container">
+      <div class="gallery__row">
+        <div
+          class="gallery__column"
+          v-for="gallery in gallerys"
+          :key="gallery && gallery.id"
+          :class="{
+            gallery__column_picture: gallery && gallery.type === 'image',
+          }"
+          @click="showModal(gallery)"
+        >
+          <div class="gallery__video">
+            <div class="gallery__play-icon" v-if="gallery.type === 'video'">
+              <img src="/img/gallery/play-icon.svg" alt="" />
+            </div>
             <div class="gallery__img-box">
               <img
-                :src="`${imgURL}/${
-                  galleryImageOne && galleryImageOne.gallery_path
-                }-300.jpg`"
+                v-if="gallery.type === 'image'"
+                :src="`${imgURL}/${gallery && gallery.gallery_path}-300.jpg`"
                 alt=""
               />
-            </div>
-          </div>
-          <div
-            class="gallery__column"
-            v-for="galleryVideo in galleryVideos"
-            :key="galleryVideo && galleryVideo.id"
-            @click="showVideo(galleryVideo)"
-          >
-            <div class="gallery__video">
-              <div class="gallery__play-icon">
-                <img src="/img/gallery/play-icon.svg" alt="" />
-              </div>
-              <div class="gallery__img-box">
-                <img
-                  :src="`${imgURL}/${
-                    galleryVideo && galleryVideo.gallery_path
-                  }`"
-                  alt=""
-                />
-              </div>
-            </div>
-          </div>
-          <div
-            class="gallery__column gallery__column_picture"
-            v-for="galleryImageTwo in galleryImagesTwo"
-            :key="galleryImageTwo && galleryImageTwo.id"
-            @click="showImage(galleryImageTwo)"
-          >
-            <div class="gallery__img-box">
               <img
-                :src="`${imgURL}/${
-                  galleryImageTwo && galleryImageTwo.gallery_path
-                }-300.jpg`"
+                v-else
+                :src="`${imgURL}/${gallery && gallery.gallery_path}`"
                 alt=""
               />
             </div>
           </div>
         </div>
       </div>
-      <video-player
-        :isShowVideo="isShowVideo"
-        :imgURL="imgURL"
-        :video="video"
-        @closeModal="isShowVideo = false"
-      ></video-player>
-      <picture
-        :isShowImage="isShowImage"
-        :imgURL="imgURL"
-        :image="image"
-        @closeModal="isShowImage = false"
-      ></picture>
-    </section>
-  </span>
+    </div>
+    <video-player
+      :isShowVideo="isShowVideo"
+      :imgURL="imgURL"
+      :video="video"
+      @closeModal="isShowVideo = false"
+    ></video-player>
+    <big-picture
+      :isShowImage="isShowImage"
+      :imgURL="imgURL"
+      :image="image"
+      @closeModal="isShowImage = false"
+    ></big-picture>
+  </section>
 </template>
 
 <script>
-import Slider from '@/components/app/Slider.vue'
 import VideoPlayer from '@/components/app/popUp/VideoPlayer.vue'
-import Picture from '@/components/app/popUp/Picture.vue'
+import BigPicture from '@/components/app/popUp/BigPicture.vue'
 import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'GalleryPage',
   components: {
-    Slider,
     VideoPlayer,
-    Picture,
+    BigPicture,
   },
   data() {
     return {
@@ -107,23 +79,22 @@ export default {
     })
   },
   computed: {
-    ...mapGetters('client', [
-      'imgURL',
-      'headerSliders',
-      'galleryImagesOne',
-      'galleryImagesTwo',
-      'galleryVideos',
-    ]),
+    ...mapGetters('client', ['imgURL', 'headerSliders', 'gallerys']),
   },
   methods: {
     ...mapActions('client', ['fetchGallery']),
-    showVideo(video) {
-      this.video = video?.gallery_path
-      this.isShowVideo = true
-    },
-    showImage(image) {
-      this.image = image?.gallery_path
-      this.isShowImage = true
+    async showModal(item) {
+      if (item.type === 'image') {
+        this.image = item?.gallery_path
+        setTimeout(() => {
+          this.isShowImage = true
+        }, 500)
+      } else if (item.type === 'video') {
+        this.video = item?.gallery_path
+        setTimeout(() => {
+          this.isShowVideo = true
+        }, 500)
+      }
     },
   },
 }

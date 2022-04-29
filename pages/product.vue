@@ -1,201 +1,193 @@
 <template>
-  <span>
-    <slider :imgURL="imgURL" :sliders="headerSliders"></slider>
-    <section class="product" :class="{ active: isActive }">
-      <div class="product__pop-up">
-        <div class="product__pop-upItem">
-          <span @click="closeReadMore" class="product__pop-upClose"></span>
-          <div class="product__pop-upImg">
-            <img :src="popup.img" alt="" />
-          </div>
-          <div class="product__pop-upContent">
-            <div class="product__pop-upTitle">{{ popup.title }}</div>
-            <div class="product__content-table" v-html="popup.content"></div>
-          </div>
+  <section class="product" :class="{ active: isActive }">
+    <div class="product__pop-up">
+      <div class="product__pop-upItem">
+        <span @click="closeReadMore" class="product__pop-upClose"></span>
+        <div class="product__pop-upImg">
+          <img :src="popup.img" alt="" />
+        </div>
+        <div class="product__pop-upContent">
+          <div class="product__pop-upTitle">{{ popup.title }}</div>
+          <div class="product__content-table" v-html="popup.content"></div>
         </div>
       </div>
-      <div class="product__container __container">
-        <div class="product__row">
-          <div class="product__column">
-            <div class="product__img">
-              <img :src="lumpSulfur.img" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">{{ lumpSulfur.title }}</div>
-              <div
-                class="product__content-table"
-                v-html="lumpSulfur.miniTable"
-              ></div>
-            </div>
-            <div class="product__footer">
-              <div class="product__date">May 20th 2022</div>
-              <div @click="readMore(lumpSulfur)" class="product__btn">
-                Read More
-              </div>
+    </div>
+    <div class="product__container __container">
+      <div class="product__row">
+        <div class="product__column">
+          <div class="product__img">
+            <img :src="lumpSulfur.img" alt="" />
+          </div>
+          <div class="product__content">
+            <div class="product__content-title">{{ lumpSulfur.title }}</div>
+            <div
+              class="product__content-table"
+              v-html="lumpSulfur.miniTable"
+            ></div>
+          </div>
+          <div class="product__footer">
+            <div class="product__date">May 20th 2022</div>
+            <div @click="readMore(lumpSulfur)" class="product__btn">
+              Read More
             </div>
           </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img :src="urean46.img" alt="" />
+        </div>
+        <div class="product__column">
+          <div class="product__img">
+            <img :src="urean46.img" alt="" />
+          </div>
+          <div class="product__content">
+            <div class="product__content-title">{{ urean46.title }}</div>
+            <div
+              class="product__content-table"
+              v-html="urean46.miniTable"
+            ></div>
+          </div>
+          <div class="product__footer">
+            <div class="product__date">May 20th 2022</div>
+            <div @click="readMore(urean46)" class="product__btn">Read More</div>
+          </div>
+        </div>
+        <div class="product__column">
+          <div class="product__img">
+            <img :src="bitumen.img" alt="" />
+          </div>
+          <div class="product__content">
+            <div class="product__content-title">{{ bitumen.title }}</div>
+            <div
+              class="product__content-table"
+              v-html="bitumen.miniTable"
+            ></div>
+          </div>
+          <div class="product__footer">
+            <div class="product__date">May 20th 2022</div>
+            <div @click="readMore(bitumen)" class="product__btn">Read More</div>
+          </div>
+        </div>
+        <div class="product__column">
+          <div class="product__img">
+            <img :src="petroleumCoke.img" alt="" />
+          </div>
+          <div class="product__content">
+            <div class="product__content-title">
+              {{ petroleumCoke.title }}
             </div>
-            <div class="product__content">
-              <div class="product__content-title">{{ urean46.title }}</div>
-              <div
-                class="product__content-table"
-                v-html="urean46.miniTable"
-              ></div>
-            </div>
-            <div class="product__footer">
-              <div class="product__date">May 20th 2022</div>
-              <div @click="readMore(urean46)" class="product__btn">
-                Read More
-              </div>
+            <div
+              class="product__content-table"
+              v-html="petroleumCoke.miniTable"
+            ></div>
+          </div>
+          <div class="product__footer">
+            <div class="product__date">May 20th 2022</div>
+            <div @click="readMore(petroleumCoke)" class="product__btn">
+              Read More
             </div>
           </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img :src="bitumen.img" alt="" />
+        </div>
+        <div class="product__column">
+          <div class="product__img">
+            <img :src="potassiumChloride.img" alt="" />
+          </div>
+          <div class="product__content">
+            <div class="product__content-title">
+              {{ potassiumChloride.title }}
             </div>
-            <div class="product__content">
-              <div class="product__content-title">{{ bitumen.title }}</div>
-              <div
-                class="product__content-table"
-                v-html="bitumen.miniTable"
-              ></div>
-            </div>
-            <div class="product__footer">
-              <div class="product__date">May 20th 2022</div>
-              <div @click="readMore(bitumen)" class="product__btn">
-                Read More
-              </div>
+            <div
+              class="product__content-table"
+              v-html="potassiumChloride.miniTable"
+            ></div>
+          </div>
+          <div class="product__footer">
+            <div class="product__date">May 20th 2022</div>
+            <div @click="readMore(potassiumChloride)" class="product__btn">
+              Read More
             </div>
           </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img :src="petroleumCoke.img" alt="" />
+        </div>
+        <div class="product__column">
+          <div class="product__img">
+            <img :src="granularSulphur.img" alt="" />
+          </div>
+          <div class="product__content">
+            <div class="product__content-title">
+              {{ granularSulphur.title }}
             </div>
-            <div class="product__content">
-              <div class="product__content-title">
-                {{ petroleumCoke.title }}
-              </div>
-              <div
-                class="product__content-table"
-                v-html="petroleumCoke.miniTable"
-              ></div>
-            </div>
-            <div class="product__footer">
-              <div class="product__date">May 20th 2022</div>
-              <div @click="readMore(petroleumCoke)" class="product__btn">
-                Read More
-              </div>
+            <div
+              class="product__content-table"
+              v-html="granularSulphur.miniTable"
+            ></div>
+          </div>
+          <div class="product__footer">
+            <div class="product__date">May 20th 2022</div>
+            <div @click="readMore(granularSulphur)" class="product__btn">
+              Read More
             </div>
           </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img :src="potassiumChloride.img" alt="" />
+        </div>
+        <div class="product__column">
+          <div class="product__img">
+            <img :src="hydrocarbonGases.img" alt="" />
+          </div>
+          <div class="product__content">
+            <div class="product__content-title">
+              {{ hydrocarbonGases.title }}
             </div>
-            <div class="product__content">
-              <div class="product__content-title">
-                {{ potassiumChloride.title }}
-              </div>
-              <div
-                class="product__content-table"
-                v-html="potassiumChloride.miniTable"
-              ></div>
-            </div>
-            <div class="product__footer">
-              <div class="product__date">May 20th 2022</div>
-              <div @click="readMore(potassiumChloride)" class="product__btn">
-                Read More
-              </div>
+            <div
+              class="product__content-table"
+              v-html="hydrocarbonGases.miniTable"
+            ></div>
+          </div>
+          <div class="product__footer">
+            <div class="product__date">May 20th 2022</div>
+            <div @click="readMore(hydrocarbonGases)" class="product__btn">
+              Read More
             </div>
           </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img :src="granularSulphur.img" alt="" />
+        </div>
+        <div class="product__column">
+          <div class="product__img">
+            <img :src="polypropylene.img" alt="" />
+          </div>
+          <div class="product__content">
+            <div class="product__content-title">
+              {{ polypropylene.title }}
             </div>
-            <div class="product__content">
-              <div class="product__content-title">
-                {{ granularSulphur.title }}
-              </div>
-              <div
-                class="product__content-table"
-                v-html="granularSulphur.miniTable"
-              ></div>
-            </div>
-            <div class="product__footer">
-              <div class="product__date">May 20th 2022</div>
-              <div @click="readMore(granularSulphur)" class="product__btn">
-                Read More
-              </div>
+            <div
+              class="product__content-table"
+              v-html="polypropylene.miniTable"
+            ></div>
+          </div>
+          <div class="product__footer">
+            <div class="product__date">May 20th 2022</div>
+            <div @click="readMore(polypropylene)" class="product__btn">
+              Read More
             </div>
           </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img :src="hydrocarbonGases.img" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">
-                {{ hydrocarbonGases.title }}
-              </div>
-              <div
-                class="product__content-table"
-                v-html="hydrocarbonGases.miniTable"
-              ></div>
-            </div>
-            <div class="product__footer">
-              <div class="product__date">May 20th 2022</div>
-              <div @click="readMore(hydrocarbonGases)" class="product__btn">
-                Read More
-              </div>
-            </div>
+        </div>
+        <div class="product__column">
+          <div class="product__img">
+            <img :src="bitumen6070.img" alt="" />
           </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img :src="polypropylene.img" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">
-                {{ polypropylene.title }}
-              </div>
-              <div
-                class="product__content-table"
-                v-html="polypropylene.miniTable"
-              ></div>
-            </div>
-            <div class="product__footer">
-              <div class="product__date">May 20th 2022</div>
-              <div @click="readMore(polypropylene)" class="product__btn">
-                Read More
-              </div>
-            </div>
+          <div class="product__content">
+            <div class="product__content-title">{{ bitumen6070.title }}</div>
+            <div
+              class="product__content-table"
+              v-html="bitumen6070.miniTable"
+            ></div>
           </div>
-          <div class="product__column">
-            <div class="product__img">
-              <img :src="bitumen6070.img" alt="" />
-            </div>
-            <div class="product__content">
-              <div class="product__content-title">{{ bitumen6070.title }}</div>
-              <div
-                class="product__content-table"
-                v-html="bitumen6070.miniTable"
-              ></div>
-            </div>
-            <div class="product__footer">
-              <div class="product__date">May 20th 2022</div>
-              <div @click="readMore(bitumen6070)" class="product__btn">
-                Read More
-              </div>
+          <div class="product__footer">
+            <div class="product__date">May 20th 2022</div>
+            <div @click="readMore(bitumen6070)" class="product__btn">
+              Read More
             </div>
           </div>
         </div>
       </div>
-    </section>
-  </span>
+    </div>
+  </section>
 </template>
 
 <script>
-import Slider from '@/components/app/Slider.vue'
 import { mapGetters } from 'vuex'
 import lumpSulfur from '@/static/product-table/lumpSulfur'
 import urean46 from '@/static/product-table/urean46'
@@ -209,9 +201,6 @@ import bitumen6070 from '@/static/product-table/bitumen6070'
 
 export default {
   name: 'ProductPage',
-  components: {
-    Slider,
-  },
   data() {
     return {
       isActive: false,

@@ -17,8 +17,8 @@ const state = () => ({
   aboutContent: null,
   aboutImagePath: null,
   aboutImages: null,
-  galleryImages: null,
-  galleryVideos: null,
+  gallerys: null,
+  contact: null,
 })
 
 export default {

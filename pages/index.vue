@@ -1,6 +1,5 @@
 <template>
   <span>
-    <slider :imgURL="imgURL" :sliders="headerSliders"></slider>
     <section class="title-topics">
       <div class="title-topics__container __container">
         <h2 class="title-topics__title">{{ topicTitle }}</h2>
@@ -43,7 +42,7 @@
                   <div
                     class="facilities__items-first-right_img"
                     v-for="itemsFirstRightImage in itemsFirstRightImages"
-                    :key="itemsFirstRightImage.id"
+                    :key="itemsFirstRightImage && itemsFirstRightImage.id"
                   >
                     <img
                       :src="`${imgURL}/${
@@ -58,7 +57,7 @@
                 <div
                   class="facilities__items-last_img"
                   v-for="itemsLastImage in itemsLastImages"
-                  :key="itemsLastImage.id"
+                  :key="itemsLastImage && itemsLastImage.id"
                 >
                   <img
                     :src="`${imgURL}/${
@@ -90,13 +89,9 @@
 </template>
 
 <script>
-import Slider from '@/components/app/Slider.vue'
 import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'HomePage',
-  components: {
-    Slider,
-  },
   watch: {
     '$i18n.locale': async function () {
       await this.fetchHome({

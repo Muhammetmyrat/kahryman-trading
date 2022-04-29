@@ -1,6 +1,5 @@
 <template>
   <span>
-    <slider :imgURL="imgURL" :sliders="headerSliders"></slider>
     <div class="about-us">
       <div class="about-us__container __container">
         <div class="about-us__body">
@@ -65,13 +64,9 @@
 </template>
 
 <script>
-import Slider from '@/components/app/Slider.vue'
 import { mapActions, mapGetters } from 'vuex'
 export default {
   name: 'AboutPage',
-  components: {
-    Slider,
-  },
   watch: {
     '$i18n.locale': async function () {
       await this.fetchAboutUs({

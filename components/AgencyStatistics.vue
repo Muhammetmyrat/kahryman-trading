@@ -33,8 +33,13 @@
         <img src="/img/global_agencies/statistic-3.svg" alt="" />
       </div>
       <div class="agency__number">
-        <h5 class="counter" :data-target="0">+0</h5>
-        <p>TONNAGE POTASSIUM</p>
+        <h5
+          class="counter"
+          :data-target="statistics && statistics[2] && statistics[2].number"
+        >
+          +0
+        </h5>
+        <p>{{ statistics && statistics[2] && statistics[2].title }}</p>
       </div>
     </div>
   </div>
