@@ -7,6 +7,7 @@
 <script>
 // import "@/assets/index.css";
 export default {
+  middleware: ['checkLogin'],
   // head() {
   //   return {
   //     link: [{ rel: "stylesheet", href: "/styles.css" }],

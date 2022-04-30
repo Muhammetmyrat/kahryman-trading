@@ -75,7 +75,6 @@ export default {
     ...mapActions('client', ['fetchHeader']),
   },
   mounted() {
-    console.log(this.$route)
     window.addEventListener('scroll', () => {
       if (
         window.scrollY >= this.scrollTrigger ||

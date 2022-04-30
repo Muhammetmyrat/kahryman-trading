@@ -26,7 +26,13 @@ const hydrocarbonGases = {
 		  <td>75</td>
 		  <td colspan='2'>Not standardized</td>
 	  </tr>
-
+		<tr>
+			<td>3</td>
+			<td>The sum of butanes and butylenes, not less than</td>
+			<td>Not standardized</td>
+			<td >60</td>
+			<td >60 <br/> -</td>
+  	</tr>
   </tbody>
 </table>`,
   content: ` <table>

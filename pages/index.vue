@@ -33,7 +33,7 @@
                 <div class="facilities__items-first-left">
                   <div class="facilities__items-first-left_img">
                     <img
-                      :src="`${imgURL}/${itemsFirstLeftImg}-300.jpg`"
+                      :src="`${imgURL}/${itemsFirstLeftImg}-700.jpg`"
                       alt=""
                     />
                   </div>
@@ -47,7 +47,7 @@
                     <img
                       :src="`${imgURL}/${
                         itemsFirstRightImage && itemsFirstRightImage.image_path
-                      }-300.jpg`"
+                      }-700.jpg`"
                       alt=""
                     />
                   </div>
@@ -62,7 +62,7 @@
                   <img
                     :src="`${imgURL}/${
                       itemsLastImage && itemsLastImage.image_path
-                    }-300.jpg
+                    }-700.jpg
 										`"
                     alt=""
                   />

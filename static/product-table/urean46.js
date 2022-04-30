@@ -20,7 +20,11 @@ const urean46 = {
 	  <td>Biuret (Ureido Formamide) fraction of total mass, %, no more</td>
 	  <td>1.4</td>
 	</tr>
-
+	<tr>
+		<td>3</td>
+		<td>Loose ammonia fraction of total mass, %, no more, for carbamide</td>
+		<td></td>
+  </tr>
   </tbody>
 </table>`,
   content: `  <table>

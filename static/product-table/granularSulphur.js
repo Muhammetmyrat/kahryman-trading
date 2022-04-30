@@ -20,6 +20,11 @@ const granularSulphur = {
 	  <td>Mass fraction of ash, %, not less than</td>
 	  <td>0,03</td>
 	</tr>
+	<tr>
+	  <td>3</td>
+	  <td>Mass fraction of organic compounds, %, not less than</td>
+	  <td>0,03</td>
+	</tr>
   </tbody>
 </table>`,
   content: `   <table>

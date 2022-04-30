@@ -12,11 +12,16 @@ const menus = (state) => {
     { id: 3, path: '/gallery' },
     { id: 4, path: '/contact-us' },
   ]
-  menus[0]['name'] = state.headerMenus[0]?.name
-  menus[1]['name'] = state.headerMenus[1]?.name
-  menus[2]['name'] = state.headerMenus[2]?.name
-  menus[3]['name'] = state.headerMenus[3]?.name
-  menus[4]['name'] = state.headerMenus[4]?.name
+  menus[0]['name'] =
+    state.headerMenus && state.headerMenus[0] && state.headerMenus[0].name
+  menus[1]['name'] =
+    state.headerMenus && state.headerMenus[1] && state.headerMenus[1].name
+  menus[2]['name'] =
+    state.headerMenus && state.headerMenus[2] && state.headerMenus[2].name
+  menus[3]['name'] =
+    state.headerMenus && state.headerMenus[3] && state.headerMenus[3].name
+  menus[4]['name'] =
+    state.headerMenus && state.headerMenus[4] && state.headerMenus[4].name
   return menus
 }
 const languages = (state) => {

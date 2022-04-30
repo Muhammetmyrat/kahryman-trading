@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative flex w-screen min-w-[1440px] h-screen min-h-[720px] bg-gradient-to-tr from-rose-900 to-sky-500 text-white"
+    class="relative flex w-screen min-w-[1440px] h-screen min-h-[720px] bg-white text-white"
   >
     <div class="w-full h-full flex justify-center items-center">
       <div
@@ -10,17 +10,17 @@
           v-model="data.username"
           placeholder="Login"
           type="text"
-          class="w-[50%] h-[40px] bg-gradient-to-tr from-rose-900 to-sky-500 text-white outline-none focus:outline-none"
+          class="w-[50%] h-[40px] text-black border border-black outline-none focus:outline-none"
         />
         <input
           v-model="data.password"
           placeholder="Password"
           type="password"
-          class="w-[50%] h-[40px] mt-[20px] bg-gradient-to-tr from-rose-900 to-sky-500 text-white outline-none focus:outline-none"
+          class="w-[50%] h-[40px] mt-[20px] text-black border border-black outline-none focus:outline-none"
         />
         <button
-          @click.prevent="submitForm"
-          class="w-[30%] h-[40px] mt-[20px] bg-gradient-to-tr from-rose-900 to-sky-500 text-white"
+          @click="submitForm"
+          class="w-[30%] h-[40px] mt-[20px] text-black border border-black"
         >
           Login
         </button>
@@ -30,6 +30,7 @@
 </template>
 
 <script src="">
+import { mapActions } from 'vuex'
 // import { mapState } from "vuex";
 export default {
   layout: 'login',
@@ -43,36 +44,25 @@ export default {
   },
   computed: {},
   methods: {
+    ...mapActions('admin', ['takeToken']),
     async submitForm() {
       try {
+        console.log('1')
         const res = await this.$auth
           .loginWith('local', {
             data: this.data,
           })
           .then((response) => {
+            console.log('11')
             // console.log("LoginResponse", response);
             if (response.status === 200) {
-              console.log('LoginResponse', response)
-              this.$auth.setUserToken(response.data.token)
-              console.log(
-                'this.$auth.strategy.token',
-                this.$auth.strategy.token.set(response.data.token)
-              )
+              // console.log("LoginResponse", response);
+              this.$router.push('admin')
+              // console.log("response", response);
+              this.$auth.setUserToken(this.$auth.strategy.token.get())
 
-              this.$auth.strategy.token.set(response.data.token)
-              this.$auth.strategy.token.sync()
-              console.log(
-                'this.$auth.strategy.token.status()',
-                this.$auth.strategy.token.status()
-              )
-              // this.$auth.strategy.token.set(response.data.token);
+              this.takeToken({ Token: this.$auth.strategy.token.get() })
             }
-          })
-          .catch((Error) => {
-            console.log('ErrorToken', Error)
-          })
-          .then(() => {
-            this.$router.push('/admin')
           })
       } catch (e) {
         this.$router.push('/login')

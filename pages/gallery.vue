@@ -18,12 +18,12 @@
             <div class="gallery__img-box">
               <img
                 v-if="gallery.type === 'image'"
-                :src="`${imgURL}/${gallery && gallery.gallery_path}-300.jpg`"
+                :src="`${imgURL}/${gallery && gallery.gallery_path}-700.jpg`"
                 alt=""
               />
               <img
                 v-else
-                :src="`${imgURL}/${gallery && gallery.gallery_path}`"
+                :src="`${imgURL}/${gallery && gallery.image_path}-700.jpg`"
                 alt=""
               />
             </div>
@@ -35,13 +35,13 @@
       :isShowVideo="isShowVideo"
       :imgURL="imgURL"
       :video="video"
-      @closeModal="isShowVideo = false"
+      @closeModal="closeVideoPlayer"
     ></video-player>
     <big-picture
       :isShowImage="isShowImage"
       :imgURL="imgURL"
       :image="image"
-      @closeModal="isShowImage = false"
+      @closeModal="closeBigPicture"
     ></big-picture>
   </section>
 </template>
@@ -129,13 +129,23 @@ export default {
         this.image = item?.gallery_path
         setTimeout(() => {
           this.isShowImage = true
+          document.body.classList.add('_lock')
         }, 500)
       } else if (item.type === 'video') {
         this.video = item?.gallery_path
         setTimeout(() => {
           this.isShowVideo = true
+          document.body.classList.add('_lock')
         }, 500)
       }
+    },
+    closeBigPicture() {
+      this.isShowImage = false
+      document.body.classList.remove('_lock')
+    },
+    closeVideoPlayer() {
+      this.isShowVideo = false
+      document.body.classList.remove('_lock')
     },
   },
 }

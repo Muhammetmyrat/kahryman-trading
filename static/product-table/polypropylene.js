@@ -29,6 +29,13 @@ const polypropylene = {
 	  <td>2</td>
 	  <td>2</td>
 	</tr>
+	<tr>
+	  <td>3</td>
+	  <td>Granule size, pcs/g</td>
+	  <td>40-60</td>
+	  <td>40-60</td>
+	  <td>40-60</td>
+	</tr>
   </tbody>
 </table>`,
   content: `   <table>

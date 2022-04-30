@@ -26,6 +26,15 @@ const lumpSulfur = {
 	  <td>99,50</td>
 	  <td>99,20</td>
 	</tr>
+	<tr>
+		<td>2</td>
+		<td>Ash content, %, not more than</td>
+		<td>0,02</td>
+		<td>0,03</td>
+		<td>0,05</td>
+		<td>0,2</td>
+		<td>0,4</td>
+  </tr>
   </tbody>
 </table>`,
   content: `       <table>

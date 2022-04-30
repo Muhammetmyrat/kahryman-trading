@@ -26,7 +26,7 @@
             ></div>
           </div>
           <div class="product__footer">
-            <div class="product__date">May 20th 2022</div>
+            <div class="product__date"></div>
             <div @click="readMore(lumpSulfur)" class="product__btn">
               Read More
             </div>
@@ -44,7 +44,7 @@
             ></div>
           </div>
           <div class="product__footer">
-            <div class="product__date">May 20th 2022</div>
+            <div class="product__date"></div>
             <div @click="readMore(urean46)" class="product__btn">Read More</div>
           </div>
         </div>
@@ -60,7 +60,7 @@
             ></div>
           </div>
           <div class="product__footer">
-            <div class="product__date">May 20th 2022</div>
+            <div class="product__date"></div>
             <div @click="readMore(bitumen)" class="product__btn">Read More</div>
           </div>
         </div>
@@ -78,7 +78,7 @@
             ></div>
           </div>
           <div class="product__footer">
-            <div class="product__date">May 20th 2022</div>
+            <div class="product__date"></div>
             <div @click="readMore(petroleumCoke)" class="product__btn">
               Read More
             </div>
@@ -98,7 +98,7 @@
             ></div>
           </div>
           <div class="product__footer">
-            <div class="product__date">May 20th 2022</div>
+            <div class="product__date"></div>
             <div @click="readMore(potassiumChloride)" class="product__btn">
               Read More
             </div>
@@ -118,7 +118,7 @@
             ></div>
           </div>
           <div class="product__footer">
-            <div class="product__date">May 20th 2022</div>
+            <div class="product__date"></div>
             <div @click="readMore(granularSulphur)" class="product__btn">
               Read More
             </div>
@@ -138,7 +138,7 @@
             ></div>
           </div>
           <div class="product__footer">
-            <div class="product__date">May 20th 2022</div>
+            <div class="product__date"></div>
             <div @click="readMore(hydrocarbonGases)" class="product__btn">
               Read More
             </div>
@@ -158,7 +158,7 @@
             ></div>
           </div>
           <div class="product__footer">
-            <div class="product__date">May 20th 2022</div>
+            <div class="product__date"></div>
             <div @click="readMore(polypropylene)" class="product__btn">
               Read More
             </div>
@@ -176,7 +176,7 @@
             ></div>
           </div>
           <div class="product__footer">
-            <div class="product__date">May 20th 2022</div>
+            <div class="product__date"></div>
             <div @click="readMore(bitumen6070)" class="product__btn">
               Read More
             </div>

@@ -8,7 +8,7 @@
               <div class="facilities__items-first">
                 <div class="facilities__items-first-left">
                   <div class="facilities__items-first-left_img">
-                    <img :src="`${imgURL}/${itemsFirstLeftImgAbout}-300.jpg`" />
+                    <img :src="`${imgURL}/${itemsFirstLeftImgAbout}-700.jpg`" />
                   </div>
                 </div>
                 <div class="facilities__items-first-right">
@@ -23,7 +23,7 @@
                       :src="`${imgURL}/${
                         itemsFirstRightImageAbout &&
                         itemsFirstRightImageAbout.image_path
-                      }-300.jpg`"
+                      }-700.jpg`"
                     />
                   </div>
                 </div>
@@ -37,7 +37,7 @@
                   <img
                     :src="`${imgURL}/${
                       itemsLastImageAbout && itemsLastImageAbout.image_path
-                    }-300.jpg`"
+                    }-700.jpg`"
                   />
                 </div>
               </div>
@@ -58,7 +58,7 @@
       </div>
     </div>
     <div class="about-us__footer __container">
-      <img :src="`${imgURL}/${aboutImagePath}-300.jpg`" alt="" />
+      <img :src="`${imgURL}/${aboutImagePath}-700.jpg`" alt="" />
     </div>
   </span>
 </template>

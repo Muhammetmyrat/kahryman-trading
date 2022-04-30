@@ -29,6 +29,20 @@ const bitumen6070 = {
 	  <td>46</td>
 	  <td>-</td>
 	</tr>
+	<tr>
+	  <td>Ductility; At 25 C(5CM/MIN)</td>
+	  <td>ASTM D113</td>
+	  <td>>100</td>
+	  <td>100</td>
+	  <td>-</td>
+	</tr>
+	<tr>
+	  <td>Density; At 25 C,g/cm3</td>
+	  <td>ASTM D70</td>
+	  <td>>1.0252</td>
+	  <td>-</td>
+	  <td>-</td>
+	</tr>
   </tbody>
 </table>`,
   content: `    <table>

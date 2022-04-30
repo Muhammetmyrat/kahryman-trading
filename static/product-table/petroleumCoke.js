@@ -20,6 +20,11 @@ const petroleumCoke = {
 	  <td>Ash content, %, not more than</td>
 	  <td>0,6</td>
 	</tr>
+	<tr>
+	  <td>3</td>
+	  <td>Mass fraction of sulfur, %, not more than</td>
+	  <td>0,6</td>
+	</tr>
   </tbody>
 </table>`,
   content: `  <table>

@@ -224,7 +224,6 @@ export default {
             }, 3000)
           }
         } catch (e) {
-          console.log(e)
           if (e) {
             this.clearInput()
             this.loading = false
